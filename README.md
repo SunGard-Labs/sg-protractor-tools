@@ -1,6 +1,6 @@
 # SunGard Protractor Tools
 
-Version: 0.1.0-SNAPSHOT
+Version: 0.1.0
 
 This project provides a reusable library of functions simplifying the testing of HTML5 applications using Protractor.
 
