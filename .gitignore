@@ -1,0 +1,8 @@
+.DS_Store
+
+node_modules/
+app/vendor/
+.tmp/
+coverage
+target
+.idea/

@@ -1,0 +1,11 @@
+# Setting EOL for specific file types to prevent breaking binary files
+*.js text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.java text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.css text eol=lf
+*.less text eol=lf
+
