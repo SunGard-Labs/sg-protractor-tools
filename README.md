@@ -66,6 +66,6 @@ grunt release --releaseVersion 0.2.0 --developVersion 0.3.0-SNAPSHOT
 - [Grunt](http://gruntjs.com/)
 - [Protractor](https://github.com/angular/protractor)
 
-- - - -
+## License
 
-Copyright © SunGard 2015 - All rights reserved
+Copyright © SunGard 2015. Licensed under the MIT license.
