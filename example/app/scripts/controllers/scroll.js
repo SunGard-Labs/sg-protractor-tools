@@ -9,9 +9,7 @@
  */
 angular.module('exampleApp')
   .controller('ScrollCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.waveMyWand = function() {
+        angular.element('body').css('background-color', 'red');
+    }
   });
