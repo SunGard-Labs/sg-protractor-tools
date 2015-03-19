@@ -23,12 +23,34 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#/">Contact</a></li>
-          <li><a ng-href="#/scroll">Scroll Example</a></li>
-        </ul>
+          <!--<ul class="nav nav-pills pull-right">
+            <li class="active"><a ng-href="#/">Home</a></li>
+            <li><a ng-href="#/about">About</a></li>
+            <li><a ng-href="#/">Contact</a></li>
+            <li><a ng-href="#/scroll">Scroll Example</a></li>
+          </ul>-->
+          <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" ng-href="#/">SgProtractorTools</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav">
+                          <li ><a class="active"ng-href="#/">Home</a></li>
+                          <li><a ng-href="#/about">About</a></li>
+                          <li><a ng-href="#/">Contact</a></li>
+                          <li><a ng-href="#/scroll">Scroll Example</a></li>
+                          <li><a ng-href="#/resize">Resize Example</a></li>
+                      </ul>
+
+                  </div>
+              </div>
+          </nav>
         <h3 class="text-muted">example</h3>
       </div>
 
