@@ -13,7 +13,7 @@ describe('Testing protractor resize function', function () {
     });
 
 
-    
+    //TODO get test to pass
     xit('should display responsive menu when browser is resized to certain width ', function () {
 
           //verify responsive menu is not displayed
@@ -27,7 +27,7 @@ describe('Testing protractor resize function', function () {
           //verify resize link not displayed.
 
           //access resize view view responsive menu.
-          element(by.css('button.navbar-toggle').click();
+          element(by.css('button.navbar-toggle')).click();
 
           //click resize menu item
           var resize = element(by.linkText('Resize Example'));
