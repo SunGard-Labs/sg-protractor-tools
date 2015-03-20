@@ -96,3 +96,23 @@ div.button-obstructor{
 p.scroll-view{
     padding-bottom: 50%;   
 }
+
+.navbar-inverse {
+    background-color: #EEE;
+    border-color: #EEE;
+}
+ul li {
+    list-style: none;
+    text-transform: uppercase;
+
+}
+ul li a {
+    float: left;
+    padding: 15px;
+    color: #444;
+    text-decoration: none;
+}
+ul li a:hover, ul li a.active {
+    background-color: #EEE;
+    color:#444 !important;
+}

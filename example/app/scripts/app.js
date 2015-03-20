@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/scroll.html',
         controller: 'ScrollCtrl'
       })
+      .when('/resize', {
+        templateUrl: 'views/resize.html',
+        controller: 'ResizelCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
