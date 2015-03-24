@@ -10,19 +10,22 @@ angular.module('exampleApp').directive('sgMessager', function () {
 		restrict: 'E',
 		replace: true,
 		template :  '<div class="{{ messageClasses }}">' +
-						'<input type="button" value="-" ng-click="toggleMessageArea()" class="message-area-icons">' +
-						'<input id="messageKey" type="text" ng-model="currentMessageKey" style="opacity:0;"><br>' +
+						'<input type="button" value="-" ng-click="toggleMessageArea()" class="sg-messager-area-icons">' +
+						'<input id="sgMessagerMessageInput" type="text" ng-model="currentMessageKey" class="sg-messager-input"><br>' +
 						'{{ currentMessage }}<br>' +
-						'<input id="errorMessage" type="text" ng-model="errorMessage" style="opacity:0;">' +
+						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input">' + 
+						'<input id="sgMessagerPosition" type="text" ng-model="messagerPosition" class="sg-messager-input">' +
 					'</div>',
         link: function (scope, element, attrs) {
             scope.showMessages = true;
 			scope.styleState = '';
-			scope.messageClasses = 'explanation-message';
-			scope.currentMessageKey = 'default';
+			scope.reducedState = '';
+			scope.positionState = 'top-right';
+			scope.messagerPosition = 'top-right'; // bottom-right, bottom-left, top-left
+			scope.messageClasses = '';
+			scope.currentMessageKey = 'Tests loaded...';
 			scope.$watch('currentMessageKey',function(newValue){
 				if (newValue !== undefined && newValue !== '') {
-					scope.messageClasses = 'explanation-message';
 					scope.currentMessage = scope.currentMessageKey;
 				}
 			});
@@ -31,17 +34,20 @@ angular.module('exampleApp').directive('sgMessager', function () {
 				if (newValue !== undefined && newValue !== '') {
 					// maybe do some formatting here
 					scope.styleState = 'error';
-					scope.messageClasses = 'explanation-message '+scope.styleState;
 					scope.currentMessage = 'EXCEPTION THROWN:<br>' + newValue;
+				} else {
+					scope.styleState = '';
 				}
+				scope.updateMessageClasses();
 			});
 			scope.$watch('showMessages',function(newValue){
 				if (newValue !== undefined && newValue === true) {
 					// maybe do some formatting here
-					scope.messageClasses = 'explanation-message '+scope.styleState;
+					scope.reducedState = '';
 				} else {
-					scope.messageClasses = 'explanation-message '+scope.styleState+' reduced';
+					scope.reducedState = 'reduced';
 				}
+				scope.updateMessageClasses();
 			});
 			scope.toggleMessageArea = function() {
 				if (scope.showMessages === false) {
@@ -49,6 +55,16 @@ angular.module('exampleApp').directive('sgMessager', function () {
 				} else {
 					scope.showMessages = false;
 				}
+			};
+			scope.$watch('messagerPosition',function(newValue){
+				if (newValue !== undefined && (newValue === 'top-left' || newValue === 'top-right' || newValue === 'bottom-left' || newValue === 'bottom-right')) {
+					// maybe do some formatting here
+					scope.positionState = newValue;
+					scope.updateMessageClasses();
+				}
+			});
+			scope.updateMessageClasses = function() {
+				scope.messageClasses = 'sg-messager-explanation-message '+scope.positionState+' '+scope.styleState+' '+scope.reducedState;
 			};
         }
     };

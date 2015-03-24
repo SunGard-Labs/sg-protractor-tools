@@ -33,13 +33,11 @@ angular
       })
       .when('/resize', {
         templateUrl: 'views/resize.html',
-        controller: 'ResizelCtrl'
-      })
-        .when('/memoryTest', {
-            templateUrl: 'views/memoryview.html',
-            controller: 'MemoryCtrl'
-        })
-      .otherwise({
+        controller: 'ResizeCtrl'
+      }).when('/memoryTest', {
+        templateUrl: 'views/memoryview.html',
+        controller: 'MemoryCtrl'
+      }).otherwise({
         redirectTo: '/'
       });
   });

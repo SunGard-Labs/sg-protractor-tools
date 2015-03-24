@@ -1,4 +1,4 @@
-ddescribe('Demomstrate the memory measuring tool', function () {
+xdescribe('Demomstrate the memory measuring tool', function () {
 
     // In your test suite, use this code to include the test library.
     // var sgpt = require('sg-protractor-tools');
@@ -7,6 +7,7 @@ ddescribe('Demomstrate the memory measuring tool', function () {
     var sgpt = require('../../../');
 
     var webDriver = browser.driver;
+	browser.get('');
 
     beforeEach(function () {
         sgpt.resize.setViewportSize(1100,850);
