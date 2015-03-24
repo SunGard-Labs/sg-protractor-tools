@@ -11,5 +11,5 @@ angular.module('exampleApp')
   .controller('ScrollCtrl', function ($scope) {
     $scope.foo = function() {
         angular.element('div.button-obstructor').text('Goodbye World');
-    }
+    };
   });
