@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/resize.html',
         controller: 'ResizelCtrl'
       })
+        .when('/memoryTest', {
+            templateUrl: 'views/memoryview.html',
+            controller: 'MemoryCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });
