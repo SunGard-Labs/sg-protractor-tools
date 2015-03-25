@@ -10,28 +10,30 @@ angular.module('exampleApp').directive('sgMessager', function () {
 		restrict: 'E',
 		replace: true,
 		template :  '<div class="{{ messageClasses }}">' +
+						'<input id="sgMessagerMessageInput" type="text" ng-model="currentMessageKey" class="sg-messager-input" style="margin-top:10px;">' +
+						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input" style="margin-top:12px;">' + 
+						'<input id="sgMessagerPosition" type="text" ng-model="messagerPosition" class="sg-messager-input" style="margin-top:14px;">' +
 						'<input type="button" value="-" ng-click="toggleMessageArea()" class="sg-messager-area-icons">' +
-						'<input id="sgMessagerMessageInput" type="text" ng-model="currentMessageKey" class="sg-messager-input"><br>' +
 						'{{ currentMessage }}<br>' +
-						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input">' + 
-						'<input id="sgMessagerPosition" type="text" ng-model="messagerPosition" class="sg-messager-input">' +
 					'</div>',
         link: function (scope, element, attrs) {
-            scope.showMessages = true;
+            scope.showMessages = false;
 			scope.styleState = '';
 			scope.reducedState = '';
 			scope.positionState = 'top-right';
 			scope.messagerPosition = 'top-right'; // bottom-right, bottom-left, top-left
 			scope.messageClasses = '';
-			scope.currentMessageKey = 'Tests loaded...';
+			scope.currentMessageKey = '';
 			scope.$watch('currentMessageKey',function(newValue){
 				if (newValue !== undefined && newValue !== '') {
+					scope.showMessages = true;
 					scope.currentMessage = scope.currentMessageKey;
 				}
 			});
 			scope.errorMessage = '';
 			scope.$watch('errorMessage',function(newValue){
 				if (newValue !== undefined && newValue !== '') {
+					scope.showMessages = true;
 					// maybe do some formatting here
 					scope.styleState = 'error';
 					scope.currentMessage = 'EXCEPTION THROWN:<br>' + newValue;

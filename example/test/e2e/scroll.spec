@@ -6,16 +6,7 @@ describe('Testing protractor scrolling function', function () {
     // var sgpt = require('sg-protractor-tools');
 	
     var webDriver = browser.driver;
-	browser.get('');
-	
-	// initializing test parameters
-	var ORIGINAL_CONTENT = 'Hello World';
-	var CHANGED_CONTENT = 'Goodbye World';
-	// input queries
-	var BUTTON_CONTAINER_QUERY = 'div[id="paddedButtonContainer"]';
-	var BUTTON_QUERY = 'input[id="btn_1"]';
-	var BUTTON_OBSTRUCTOR_QUERY = 'div.button-obstructor';
-	
+		
 	// get the messager function
 	var msg = sgpt.messager.msg;
 
@@ -48,17 +39,23 @@ describe('Testing protractor scrolling function', function () {
 	it('should scroll the button into view and click on it successfully', function () {
 		msg(browser,'should scroll the button into view and click on it successfully')
 		msg(browser,'Step 1) Scrolling the button into view..');
-        var goodbyeButton = element(by.css(BUTTON_QUERY));
+		
+        var goodbyeButton = element(by.css('input[id="btn_1"]'));
+		
         // we first verify that the content in the obstructor div has not changed
-        expect(element(by.css(BUTTON_OBSTRUCTOR_QUERY)).getText()).toBe(ORIGINAL_CONTENT);		
+        expect(element(by.css('div.button-obstructor')).getText()).toBe('Hello World');		
+		
 		// scroll to make button visible 
         sgpt.scroll.scrollTo(goodbyeButton);
 		msg(browser,'Step 2) Now attempting to click the button..');
+		
         // click on the now visible button
         moveAndClickMouse(goodbyeButton, 5, 5);
 		msg(browser,'Step 3) Button clicked, the message should now read "Goodbye World"');
+		
 		// the click should now have worked so we expect the obstructor test to have changed
-        expect(element(by.css(BUTTON_OBSTRUCTOR_QUERY)).getText()).toBe(CHANGED_CONTENT);
+        expect(element(by.css('div.button-obstructor')).getText()).toBe('Goodbye World');
+		
     }, 20000);
 	
 });

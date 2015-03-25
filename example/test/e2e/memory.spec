@@ -7,7 +7,6 @@ xdescribe('Demomstrate the memory measuring tool', function () {
     var sgpt = require('../../../');
 
     var webDriver = browser.driver;
-	browser.get('');
 
     beforeEach(function () {
         sgpt.resize.setViewportSize(1100,850);

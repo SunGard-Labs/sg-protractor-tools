@@ -7,7 +7,6 @@ describe('Testing protractor resize function', function () {
     var sgpt = require('../../../');
 
     var webDriver = browser.driver;
-	browser.get('');
 
     // get the messager function
     var msg = sgpt.messager.msg;
