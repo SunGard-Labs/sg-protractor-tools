@@ -1,4 +1,4 @@
-xdescribe('Demomstrate the memory measuring tool', function () {
+ddescribe('Demomstrate the memory measuring tool', function () {
 
     // In your test suite, use this code to include the test library.
     // var sgpt = require('sg-protractor-tools');
@@ -8,13 +8,16 @@ xdescribe('Demomstrate the memory measuring tool', function () {
 
     var webDriver = browser.driver;
 
+    // get the messager function
+    var msg = sgpt.messager.msg;
+
     beforeEach(function () {
         sgpt.resize.setViewportSize(1100,850);
         browser.get('#');
     });
 
     // Set to a high value to avoid timeout by Protractor for this it test.
-    var itTimeout = 100000;
+    var itTimeout = 1000000;
 
     var testOptions = {
         initialPostGcSleep: 5000,
@@ -30,11 +33,11 @@ xdescribe('Demomstrate the memory measuring tool', function () {
 
     var clickAdd = function() {
         element(by.css('#m_1')).click();
-    }
+    };
 
     var clickRemove= function() {
         element(by.css('#m_2')).click();
-    }
+    };
 
     it('should keep the memory consumption consistant', function () {
         var iterations = 250;
@@ -44,8 +47,13 @@ xdescribe('Demomstrate the memory measuring tool', function () {
 
         var that = this;
         browser.get("#/memoryTest", 30000).then(function() {
-            sgpt.memory.runTestFunction(that, iterations, function () {
-                clickRemove();
+            sgpt.memory.runTestFunction(that, iterations, function (i) {
+                if (i % 10 === 0) {
+                    // Every ten iterations update the label
+                    msg(browser, 'Button click iteration ' + i, undefined, 0);
+                }
+                //clickRemove();
+                clickAdd();
             }, testOptions);
         });
 
