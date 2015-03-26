@@ -32,9 +32,7 @@ The library's functions are split up by their domain, e.g. all functions relatin
 
 ## Examples
 
-The [examples](examples) folder contains an example application that shows how to use this library with Protractor.
-
-TODO: Add example app.
+The [examples](examples) folder contains an example application with e2e tests that showcase how to use this library with Protractor.
 
 ## Documentation
 

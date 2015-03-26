@@ -14,13 +14,8 @@ var sgpt = require('../../../');
 describe('Demomstrate the memory measuring tool', function () {
     var webDriver = browser.driver;
 
-    // get the messager function
+    // Get the messager object to display current test execution status inside the browser
     var msg = sgpt.messager.msg;
-
-    beforeEach(function () {
-        sgpt.resize.setViewportSize(1100,850);
-        browser.get('#');
-    });
 
     // Set to a high value to avoid timeout by Protractor for this it test.
     var itTimeout = 1000000;
@@ -44,7 +39,7 @@ describe('Demomstrate the memory measuring tool', function () {
         var that = this;
         var leakProduceButton = element(by.css('#leakProducer'));
 
-        browser.get('#/memoryTest', 30000).then(function() {
+        browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
                 if (i % 10 === 0) {
                     // Every ten iterations update the label
@@ -67,7 +62,7 @@ describe('Demomstrate the memory measuring tool', function () {
         var that = this;
         var nonLeakingProduceButton = element(by.css('#m_1'));
 
-        browser.get('#/memoryTest', 30000).then(function() {
+        browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
                 if (i % 10 === 0) {
                     // Every ten iterations update the label
