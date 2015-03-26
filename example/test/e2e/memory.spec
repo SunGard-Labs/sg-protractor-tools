@@ -22,6 +22,7 @@ ddescribe('Demomstrate the memory measuring tool', function () {
         finalPostGcSleep: 5000,
         writeLogFile: true,
         writeCsvFile: true,
+        generateGraph: true,
         preTestInitFunction: function() {
             clickAdd();
         },

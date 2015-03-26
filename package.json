@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "requireindex": "^1.1.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+	"d3": "^3.5.5",
+	"phantom": "^0.7.2"
   }
 }
