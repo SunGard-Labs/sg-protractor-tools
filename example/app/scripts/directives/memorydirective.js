@@ -53,29 +53,7 @@ angular.module('exampleApp')
             replace: true,
             link: function postLink(scope, element, attrs) {
                 scope.leaking = attrs.leak !== 'false';
-                    if (scope.leaking && attrs.leakType === 'plain') {
-                        // Source: http://www.toptal.com/javascript/10-most-common-javascript-mistakes#common-mistake-3-creating-memory-leaks
-                        var theThing = null;
-                        var replaceThing = function () {
-                            var priorThing = theThing;  // hold on to the prior thing
-                            var unused = function () {
-                                // 'unused' is the only place where 'priorThing' is referenced,
-                                // but 'unused' never gets invoked
-                                if (priorThing) {
-                                    console.log('hi');
-                                }
-                            };
-                            theThing = {
-                                longStr: new Array(1000000).join('*'),  // create a 1MB object
-                                someMethod: function () {
-                                    console.log('some message');
-                                }
-                            };
-                            for (var i = 0; i < 10; i++) {
-                                replaceThing();
-                            }
-                        };
-                    } else {
+                    if (scope.leaking) {
                         for (var i = 0; i < 10; i++) {
                             polluteObject(scope, 10, false);
                         }
@@ -90,9 +68,11 @@ angular.module('exampleApp')
                         });
                     }
 
-
                 scope.$on('$destroy', function (destroy) {
-                    document.off('click.' + scope.$id);
+                    if (!scope.leaking){
+                        // Unregister the listener to remove the memory leak
+                        $document.off('click.' + scope.$id);
+                    }
                     console.log('Scope Destroy Called');
                 });
 
@@ -101,7 +81,7 @@ angular.module('exampleApp')
                     // Destroy the scope when the element gets removed
                     // Otherwise our scope cleanup will only take place when we navigate away from the
                     // current ngRoute path
-                    console.log("Elemenet Destroy Called");
+                    console.log('Element Destroy Called');
                 });
             }
         };
