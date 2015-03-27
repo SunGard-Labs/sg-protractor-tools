@@ -4,7 +4,7 @@
 // Using the local version of the code from this project.
 var sgpt = require('../../../');
 
-ddescribe('Testing dom module function', function () {
+describe('Testing dom module function', function () {
 
     var webDriver = browser.driver;
 
