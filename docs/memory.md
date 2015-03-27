@@ -17,10 +17,17 @@ Chrome provides the following values as part of the `window.performance.memory` 
 Since these tests often need to run for a longer period of time (several minutes), the `it` function needs to be called with the optional second `timeout` parameter, since the default timeout for Protractor test cases is something like 30 seconds:
 
 ```
-it('tests something', function () {
-    // Do something in here that can take a long time.
+it('tests something', function () {    
+   // Do something in here that can take a long time.
 }, 1000000);
 ```
+
+Memory utils may be used to generate `*.txt` log files and `*.csv` data files. The latter one may be used to visualize the memory usage of your app.
+The following two graphs showcase the memory usage of the two example test cases available at `/example/test/e2e/memory.spec`
+
+![Memory Increase due to leak](images/increase.png)
+
+![No memory increase](images/noIncrease.png)
 
 ## Functions
 
