@@ -23,7 +23,7 @@ it('tests something', function () {
 ```
 
 Memory utils may be used to generate `*.txt` log files and `*.csv` data files. The latter one may be used to visualize the memory usage of your app.
-The following two graphs showcase the memory usage of the two example test cases available at `/example/test/e2e/memory.spec`
+The following two graphs showcase the memory usage of the two example test cases available at [`example/test/e2e/memory.spec`](../example/test/e2e/memory.spec)
 
 ![Memory Increase due to leak](images/increase.png)
 
