@@ -1,23 +1,75 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+    <h1>'Allo, 'Allo!</h1>
+
+    <p class="lead">
+        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+        Welcome to sgProtractorTools demo application.
+    </p>
+
+    <p><button class="btn btn-lg btn-success" ng-click="awesome()">Awesome! <span class="glyphicon" ng-class="'glyphicon-' + awesomeIcon"></span></button></p>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="row">
+    <div class="col-md-12">
+        <p>This application offers example content and functionality to be tested with the sg-protractor-tools. Run
+            tests with <code>grunt protractortest</code>. Look at the <code>*.spec</code> files in the <code>test/e2e</code>
+            folder on how to use sgpt in your protractor tests.</p>
+    </div>
 </div>
+<section id="features">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a ng-href="#/scroll">
+                <span class="glyphicon glyphicon-sort"></span>
+
+                <h3>Scroll</h3>
+            </a>
+
+            <p>Scroll elements into visible area</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <a ng-href="#/resize">
+                <span class="glyphicon glyphicon-fullscreen"></span>
+
+                <h3>Resize</h3>
+            </a>
+
+            <p>Set the browser or viewport size during protractor tests</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <a ng-href="#/memoryTest">
+                <span class="glyphicon glyphicon-tasks"></span>
+
+                <h3>Memory</h3>
+            </a>
+
+            <p>Measure memory consumption during test cases and detect memory leaks</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a ng-href="#/scroll">
+                <span class="glyphicon glyphicon-tree-conifer"></span>
+
+                <h3>DOM</h3>
+            </a>
+
+            <p>Wait until elements get visible before your test continues. Or until an elements becomes invisible</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <a ng-href="#/mouse">
+                <span class="glyphicon glyphicon-hand-up"></span>
+
+                <h3>Mouse</h3>
+            </a>
+
+            <p>Perform drag and drop with ease</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <span class="glyphicon glyphicon-option-horizontal"></span>
+
+            <h3>More</h3>
+
+            <p>Coming soon...</p>
+        </div>
+    </div>
+</section>

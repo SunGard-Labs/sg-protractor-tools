@@ -6,7 +6,6 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -51,14 +50,6 @@ body {
   padding: 14px 24px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -101,6 +92,10 @@ p.scroll-view{
     background-color: #EEE;
     border-color: #EEE;
 }
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #444;
+}
+
 ul li {
     list-style: none;
     text-transform: uppercase;
@@ -116,60 +111,15 @@ ul li a:hover, ul li a.active {
     background-color: #EEE;
     color:#444 !important;
 }
+#features .row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
-/* sgMessager styles */
-#paddedButtonContainer {
-	position:relative; 
-	padding-top:550px; /* CRITICAL, EXPECTS HEIGHT OF BROWSER TO BE 600px */
+#features .row span.glyphicon {
+    font-size: 2em;
 }
-.sg-messager-explanation-message {
-	position: fixed;
-    width: 350px;
-	overflow-x: auto;
-	overflow-y: visible;
-    background-color: rgba(200,255,200,0.8);
-    color: black;
-    text-align: left;
-    padding: 20px;
-    font-size: 15px;
-    z-index: 999999;
-	border-radius: 10px;
-	border: solid gray 2px;
+
+#features .row a, #features .row a:hover {
+    color: #333;
 }
-.sg-messager-explanation-message.top-right {
-	top: 10px;
-	right: 10px;
-}
-.sg-messager-explanation-message.bottom-right {
-	bottom: 10px;
-	right: 10px;
-}
-.sg-messager-explanation-message.bottom-left {
-	bottom: 10px;
-	left: 10px;
-}
-.sg-messager-explanation-message.top-left {
-	top: 10px;
-	left: 10px;
-}
-.sg-messager-explanation-message.error {
-	background-color: rgba(255,200,200,0.8);
-	color: #CC0000;
-	font-weight:bold;
-}
-.sg-messager-explanation-message.reduced {
-	overflow-x: hidden;
-	overflow-y: hidden;
-	width: 25px;
-}
-.sg-messager-area-icons {
-	float: right;
-	margin-right: -11px;
-}
-.sg-messager-input {
-	position: absolute;
-	opacity:0;
-	width:2px;
-	height:2px;
-}
-/* ---------- */
