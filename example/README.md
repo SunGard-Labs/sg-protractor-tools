@@ -10,4 +10,4 @@ Execute `npm install` and `bower install` to install all necessary dependencies 
 
 ## Run tests
 - Start server by executing `grunt serve`. Server will be available at `http://localhost:9000` by default
-- Run e2e tests by executing `grunt protractortest`
+- Run e2e tests by executing `grunt protractor`
