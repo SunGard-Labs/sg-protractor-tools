@@ -40,7 +40,7 @@ ddescribe('Demomstrate the memory measuring tool', function () {
     }
 
     it('should keep the memory consumption consistant', function () {
-        var iterations = 5;
+        var iterations = 250;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
         //this.description = "Memory Test to isolate memory leak on opening tabs with switching";
