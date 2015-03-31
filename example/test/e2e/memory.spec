@@ -17,12 +17,14 @@ ddescribe('Demomstrate the memory measuring tool', function () {
     var itTimeout = 100000;
 
     var testOptions = {
-        initialPostGcSleep: 5000,
+        initialPostGcSleep: 500,
         finalPostTestSleep: 1500,
-        finalPostGcSleep: 5000,
+        finalPostGcSleep: 500,
         writeLogFile: true,
         writeCsvFile: true,
         generateGraph: true,
+        graphWidth: 1000,
+        graphHeight: 500,
         preTestInitFunction: function() {
             clickAdd();
         },
@@ -38,7 +40,7 @@ ddescribe('Demomstrate the memory measuring tool', function () {
     }
 
     it('should keep the memory consumption consistant', function () {
-        var iterations = 250;
+        var iterations = 5;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
         //this.description = "Memory Test to isolate memory leak on opening tabs with switching";
