@@ -30,11 +30,11 @@ sgPro.scroll.scrollTo(...);
 
 The library's functions are split up by their domain, e.g. all functions relating to resizing windows are grouped under the `sgPro.resize` object.
 
-All the tests are found in the project's `example` folder. The `README` in that folder lists all the tests that you can run, gives details about each one, as well as guidance on how to run them.
-
 ## Examples
 
 The [example](example) folder contains an example application with e2e tests that showcase how to use this library with Protractor.
+
+The `README` in that folder lists all the tests that you can run, gives details about each one, as well as guidance on how to run them.
 
 ## Documentation
 
