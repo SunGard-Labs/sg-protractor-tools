@@ -22,11 +22,27 @@ describe('Demomstrate the memory measuring tool', function () {
 
     var basicTestOptions = {
         initialPostGcSleep: 5000,
+
         finalPostTestSleep: 1500,
-        finalPostGcSleep: 5000,
+        finalPostGcSleep: 500,
         writeLogFile: true,
-        writeCsvFile: true
+        writeCsvFile: true,
+        generateGraph: true,
+        graphWidth: 1000,
+        graphHeight: 500,
+        preTestInitFunction: function() {
+            clickAdd();
+        },
+        postTestCompleteFunction: undefined
     };
+
+    var clickAdd = function() {
+        element(by.css('#m_1')).click();
+    }
+
+    var clickRemove= function() {
+        element(by.css('#m_2')).click();
+    }
 
     it('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
         var iterations = 250;
