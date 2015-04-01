@@ -22,7 +22,7 @@ it('tests something', function () {
 }, 1000000);
 ```
 
-Memory utils may be used to generate `*.txt` log files and `*.csv` data files. The latter one may be used to visualize the memory usage of your app.
+Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test.
 The following two graphs showcase the memory usage of the two example test cases available at [`example/test/e2e/memory.spec`](../example/test/e2e/memory.spec)
 
 ![Memory Increase due to leak](images/increase.png)
@@ -43,7 +43,10 @@ The optional `options` object has the following default values:
     finalPostTestSleep: 1500,
     finalPostGcSleep: 4500,
     writeLogFile: true,
-    writeCsvFile: true
+    writeCsvFile: true,
+    generateGraph: true,
+    graphWidth: 800,
+    graphHeight: 600
 }
 ```
 
@@ -52,6 +55,9 @@ The optional `options` object has the following default values:
 * `finalPostGcSleep`: Timeout in milliseconds after the final garbage collection.
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
+* `generateGraph`: Enable/disable generating memory results graph to a PNG file.
+* `graphWidth`: Set graph width.
+* `graphHeight`: Set graph height.
 
 Example usage:
 
@@ -70,7 +76,7 @@ it('tests something', function () {
 }, 1000000);
 ```
 
-The above example defines a function that changes a field in the UI, triggering some action, e.g. refreshing a grid. The `runTestFunction` call then executes the `changeFilterDate` function (through an anonymous function) 100 times, incrementing the example date parameter each time. The test results are written to both a log file and a CSV file.
+The above example defines a function that changes a field in the UI, triggering some action, e.g. refreshing a grid. The `runTestFunction` call then executes the `changeFilterDate` function (through an anonymous function) 100 times, incrementing the example date parameter each time. The test results are written to a log file, a CSV file and a graph is generated.
 
 ### `startMemoryMeasurement(protractorTestInstance[, options])`
 
@@ -81,14 +87,16 @@ The optional `options` object has the following default values:
 ```
 {
     writeLogFile: true,
-    writeCsvFile: true
+    writeCsvFile: true,
+    generateGraph: true
 }
 ```
 
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
+* `generateGraph`: Enable/disable generating memory results graph to a PNG file.
 
-By default, the results are written to a log file (in textual form, comparing each call with the previous one), and to a CSV file (raw numbers, great for analysis in something like Excel). The name of the file is derived from the test case's description and the current timestamp.
+By default, the results are written to a log file (in textual form, comparing each call with the previous one), to a CSV file (raw numbers, great for analysis in something like Excel) and a graph is also generated in a PNG file. The name of the file is derived from the test case's description and the current timestamp.
 
 Example usage:
 
@@ -105,7 +113,7 @@ it('tests something', function () {
 });
 ```
 
-### `measureMemory(previousResult, [isLast], [filename], [csvFilename], [options])`
+### `measureMemory(previousResult, [isLast], [filename], [csvFilename], [options], [graphData])`
 
 Allow measuring of currently used memory. The difference to the previous call will be printed to a log file (`filename`), and the raw values will be written to a CSV file (`csvFilename`).
 
@@ -116,12 +124,16 @@ The optional `options` object has the following default values:
 ```
 {
     writeLogFile: true,
-    writeCsvFile: true
+    writeCsvFile: true,
+    generateGraph: true
 }
 ```
 
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
+* `generateGraph`: Enable/disable generating memory results graph to a PNG file.
+
+The `graphData` parameter is an array of 2 objects for storing the memory results.
 
 Returns a promise object that (when resolved) has the following attributes:
 
