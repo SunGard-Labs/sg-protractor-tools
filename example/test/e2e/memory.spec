@@ -44,7 +44,7 @@ describe('Demomstrate the memory measuring tool', function () {
     }
 
     it('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
-        var iterations = 5;
+        var iterations = 250;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
 
