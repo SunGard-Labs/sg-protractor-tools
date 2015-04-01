@@ -22,7 +22,6 @@ describe('Demomstrate the memory measuring tool', function () {
 
     var basicTestOptions = {
         initialPostGcSleep: 5000,
-
         finalPostTestSleep: 1500,
         finalPostGcSleep: 500,
         writeLogFile: true,
@@ -45,7 +44,7 @@ describe('Demomstrate the memory measuring tool', function () {
     }
 
     it('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
-        var iterations = 250;
+        var iterations = 5;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
 
