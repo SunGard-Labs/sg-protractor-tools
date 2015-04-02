@@ -1,0 +1,57 @@
+
+/* sgMessager styles */
+#paddedButtonContainer {
+    position:relative;
+    padding-top:550px; /* CRITICAL, EXPECTS HEIGHT OF BROWSER TO BE 600px */
+}
+.sg-messager-explanation-message {
+    position: fixed;
+    width: 350px;
+    overflow-x: auto;
+    overflow-y: visible;
+    background-color: rgba(200,255,200,0.8);
+    color: black;
+    text-align: left;
+    padding: 20px;
+    font-size: 15px;
+    z-index: 999999;
+    border-radius: 10px;
+    border: solid gray 2px;
+}
+.sg-messager-explanation-message.top-right {
+    top: 10px;
+    right: 10px;
+}
+.sg-messager-explanation-message.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+.sg-messager-explanation-message.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+.sg-messager-explanation-message.top-left {
+    top: 10px;
+    left: 10px;
+}
+.sg-messager-explanation-message.error {
+    background-color: rgba(255,200,200,0.8);
+    color: #CC0000;
+    font-weight:bold;
+}
+.sg-messager-explanation-message.reduced {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 25px;
+}
+.sg-messager-area-icons {
+    float: right;
+    margin-right: -11px;
+}
+.sg-messager-input {
+    position: absolute;
+    opacity:0;
+    width:2px;
+    height:2px;
+}
+/* ---------- */

@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>This page offers a basic example on how to use the methods offered by the dom module within protractor tests.</p>
+        <p>Every time you press the <span class="label label-primary">Start</span> button, a <code>$timeout</code> will be set to a random time value. After that time period yeoman will hide. Then you are able to press the <span class="label label-primary">Seek</span> button, to search for him. After another time period of random length, yeoman will reappear.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Hide and Seek
+            <small>Visibility example</small>
+        </h2>
+        <div id="alerts" ng-show="msg" class="alert alert-info" role="alert">{{ msg }}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Control</h3>
+            </div>
+            <div class="panel-body">
+                <p><button class="btn btn-primary btn-block" id="startButton" ng-click="start()" ng-disabled="!visible|| gameRunning && visible">Start</button></p>
+                <p><button class="btn btn-primary btn-block" id="seekButton" ng-click="seek()" ng-disabled="visible || gameRunning && !visible">Seek</button></p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" ng-class="{'active': gameRunning}" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="1" style="width: 100%">
+                        <span>{{ gameStatus }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Playground</h3>
+            </div>
+            <div class="panel-body">
+                <p class="text-center">
+                    <img id="yeoman" src="images/yeoman.png" ng-show="visible" />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>This page offers two basic drag and drop examples. The first one is implemented using html5 drag and drop
+            functionality, which protractor is not able to handle at the moment due to a bug in selenium webdriver.</p>
+
+        <p>The second example is implemented using javascript event listeners and css manipulation of the moving DOM
+            object.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Native HTML5
+            <small>First example</small>
+        </h2>
+        <div id="alerts" ng-show="msg" class="alert alert-info" role="alert">{{ msg }}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default" droppable="'panel-primary'" drop="handleDrop" id="area50">
+            <div class="panel-heading">
+                <h3 class="panel-title">Area 50</h3>
+            </div>
+            <div class="panel-body drop-target" drop-insert>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default" droppable="'panel-primary'" drop="handleDrop" id="area51">
+            <div class="panel-heading">
+                <h3 class="panel-title">Area 51</h3>
+            </div>
+            <div class="panel-body drop-target" drop-insert>
+                <img id="yeoman" src="images/yeoman.png" draggable/>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default" droppable="'panel-primary'" drop="handleDrop" id="area52">
+            <div class="panel-heading">
+                <h3 class="panel-title">Area 52</h3>
+            </div>
+            <div class="panel-body drop-target" drop-insert>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="jsDragDropExmpl">
+    <div class="col-md-12">
+        <h2>Javascript
+            <small>Second example</small>
+        </h2>
+        <div class="panel panel-default">
+            <img id="yeomanjs" src="images/yeoman.png" sg-moveable />
+        </div>
+    </div>
+</div>

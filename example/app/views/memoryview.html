@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Memory Leak Directive Area</h3>
+    </div>
+    <div class="panel-body">
+        <div id="memoryContainer">
+            <memory-directive leak="false"></memory-directive>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            <button id="m_1" type="button" ng-click="produceNonLeaking()" class="btn btn-success btn-block">
+                Create non leaking directive
+            </button>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p>
+            <button id="leakProducer" type="button" ng-click="produceLeak()" class="btn btn-danger btn-block">
+                Produce Leak
+            </button>
+        </p>
+    </div>
+</div>
+
+<div id="lorem" class="row">
+    <div class="col-md-12">
+        <p>Pressing the <span class="label label-danger">Produce Leak</span> button will replace the current directive
+            present in the above panel with a new directive of the same type. The memoryDirective implementation
+            produces a memory leak based on the attributes passed.</p>
+
+        <p>Pressing the <span class="label label-success">Create non leaking directive</span> button will replace the
+            directive with a new directive of the same type that cleans up registered event listeners after itself and
+            thus does not leak memory. </p>
+    </div>
+</div>

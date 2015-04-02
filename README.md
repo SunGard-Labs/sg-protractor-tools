@@ -1,6 +1,6 @@
 # SunGard Protractor Tools
 
-Version: 0.1.0
+Version: 0.2.0
 
 This project provides a reusable library of functions simplifying the testing of HTML5 applications using Protractor.
 
@@ -32,9 +32,9 @@ The library's functions are split up by their domain, e.g. all functions relatin
 
 ## Examples
 
-The [examples](examples) folder contains an example application that shows how to use this library with Protractor.
+The [example](example) folder contains an example application with e2e tests that showcase how to use this library with Protractor.
 
-TODO: Add example app.
+The `README` in the [example](example) folder lists all the tests that you can run, gives details about each one, as well as guidance on how to run them.
 
 ## Documentation
 
@@ -66,6 +66,6 @@ grunt release --releaseVersion 0.2.0 --developVersion 0.3.0-SNAPSHOT
 - [Grunt](http://gruntjs.com/)
 - [Protractor](https://github.com/angular/protractor)
 
-- - - -
+## License
 
-Copyright © SunGard 2015 - All rights reserved
+Copyright © SunGard 2015. Licensed under the MIT license.

@@ -9,7 +9,7 @@
  */
 angular.module('exampleApp')
   .controller('ScrollCtrl', function ($scope) {
-    $scope.waveMyWand = function() {
-        angular.element('body').css('background-color', 'red');
-    }
+    $scope.foo = function() {
+        angular.element('div.button-obstructor').text('Goodbye World');
+    };
   });

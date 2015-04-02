@@ -6,7 +6,6 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -51,14 +50,6 @@ body {
   padding: 14px 24px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -76,4 +67,59 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+div.button-obstructor{
+    position: fixed;
+    bottom: 0px;    
+    left: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(255,0,255,0.5);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    z-index: 999;
+}
+
+p.scroll-view{
+    padding-bottom: 50%;   
+}
+
+.navbar-inverse {
+    background-color: #EEE;
+    border-color: #EEE;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #444;
+}
+
+ul li {
+    list-style: none;
+    text-transform: uppercase;
+
+}
+ul li a {
+    float: left;
+    padding: 15px;
+    color: #444;
+    text-decoration: none;
+}
+ul li a:hover, ul li a.active {
+    background-color: #EEE;
+    color:#444 !important;
+}
+#features .row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#features .row span.glyphicon {
+    font-size: 2em;
+}
+
+#features .row a, #features .row a:hover {
+    color: #333;
 }

@@ -27,7 +27,7 @@
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.3.1",
     "grunt-protractor-runner": "^1.2.1",
-    "html5-protractor-tools": "git+https://services.sungard.com/git/scm/h5dt/html5-protractor-tools.git"
+    "sg-protractor-tools": "git+https://services.sungard.com/git/scm/h5dt/sg-protractor-tools.git"
   },
   "engines": {
     "node": ">=0.10.0"

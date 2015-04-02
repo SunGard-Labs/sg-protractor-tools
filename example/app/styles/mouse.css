@@ -1,0 +1,11 @@
+.drop-target {
+    min-height: 180px;
+}
+
+#jsDragDropExmpl .panel {
+    min-height: 180px;
+}
+
+.drag {
+    opacity: 0.5;
+}
