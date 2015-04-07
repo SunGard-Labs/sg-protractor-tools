@@ -11,7 +11,7 @@ var sgpt = require('../../../');
  * from previous pages. This might falsify the results.
  * Best results will be revealed when running this test suite in ddescribe and only one test case (iit)
  */
-describe('Demomstrate the memory measuring tool', function () {
+ddescribe('Demomstrate the memory measuring tool', function () {
     var webDriver = browser.driver;
 
     // Get the messager object to display current test execution status inside the browser
@@ -20,36 +20,21 @@ describe('Demomstrate the memory measuring tool', function () {
     // Set to a high value to avoid timeout by Protractor for this it test.
     var itTimeout = 1000000;
 
-    var basicTestOptions = {
-        initialPostGcSleep: 5000,
-        finalPostTestSleep: 1500,
-        finalPostGcSleep: 500,
-        writeLogFile: true,
-        writeCsvFile: true,
-        generateGraph: true,
-        graphWidth: 1000,
-        graphHeight: 500,
-        preTestInitFunction: function() {
-            clickAdd();
-        },
-        postTestCompleteFunction: undefined
-    };
-
-    var clickAdd = function() {
-        element(by.css('#m_1')).click();
+    function leakFunction() {
+        var leakProduceButton = element(by.css('#leakProducer'));
+        leakProduceButton.click();
     }
 
-    var clickRemove= function() {
-        element(by.css('#m_2')).click();
+    function nonLeakFunction() {
+        var nonLeakingProduceButton = element(by.css('#m_1'));
+        nonLeakingProduceButton.click();
     }
 
-    it('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
-        var iterations = 250;
+
+    xit('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
+        var iterations = 50;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
-
-        // Override default settings if you want to
-        var testOptions = _.defaults(basicTestOptions, {});
 
         var that = this;
         var leakProduceButton = element(by.css('#leakProducer'));
@@ -60,19 +45,20 @@ describe('Demomstrate the memory measuring tool', function () {
                     // Every ten iterations update the label
                     msg(browser, 'Button click iteration ' + i, undefined, 0);
                 }
-                leakProduceButton.click();
-            }, testOptions);
+                    leakFunction();
+                },  // pass in override for default options
+                {
+                    preTestInitFunction: function () {
+                        leakFunction();
+                    }});
         });
 
     }, itTimeout);
 
-    xit('should not increase the memory consumption'/* when recreating non-leaking directive multiple times*/, function () {
+    it('should not increase the memory consumption'/* when recreating non-leaking directive multiple times*/, function () {
         var iterations = 250;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
-
-        // Override default settings if you want to
-        var testOptions = _.defaults(basicTestOptions, {});
 
         var that = this;
         var nonLeakingProduceButton = element(by.css('#m_1'));
@@ -83,8 +69,12 @@ describe('Demomstrate the memory measuring tool', function () {
                     // Every ten iterations update the label
                     msg(browser, 'Button click iteration ' + i, undefined, 0);
                 }
-                nonLeakingProduceButton.click();
-            }, testOptions);
+                    nonLeakFunction();
+                },  // pass in override for default options
+                {
+                    preTestInitFunction: function () {
+                        nonLeakFunction();
+                    }});
         });
 
     }, itTimeout);
