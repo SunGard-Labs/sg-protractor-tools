@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 // In your test suite, use this code to include the test library.
 // var sgpt = require('sg-protractor-tools');
 
@@ -11,9 +9,7 @@ var sgpt = require('../../../');
  * from previous pages. This might falsify the results.
  * Best results will be revealed when running this test suite in ddescribe and only one test case (iit)
  */
-ddescribe('Demomstrate the memory measuring tool', function () {
-    var webDriver = browser.driver;
-
+describe('Demomstrate the memory measuring tool', function () {
     // Get the messager object to display current test execution status inside the browser
     var msg = sgpt.messager.msg;
 
@@ -30,14 +26,12 @@ ddescribe('Demomstrate the memory measuring tool', function () {
         nonLeakingProduceButton.click();
     }
 
-
-    xit('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
-        var iterations = 50;
+    it('should increase the memory consumption'/* when recreating leaking directive multiple times*/, function () {
+        var iterations = 250;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
 
         var that = this;
-        var leakProduceButton = element(by.css('#leakProducer'));
 
         browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
@@ -46,22 +40,23 @@ ddescribe('Demomstrate the memory measuring tool', function () {
                     msg(browser, 'Button click iteration ' + i, undefined, 0);
                 }
                     leakFunction();
-                },  // pass in override for default options
+                },
+                // pass in override for default options
                 {
                     preTestInitFunction: function () {
                         leakFunction();
-                    }});
+                    }
+                }
+            );
         });
-
     }, itTimeout);
 
-    it('should not increase the memory consumption'/* when recreating non-leaking directive multiple times*/, function () {
+    xit('should not increase the memory consumption'/* when recreating non-leaking directive multiple times*/, function () {
         var iterations = 250;
         //Set A Baseline for memory consumption
         browser.sleep(1000);
 
         var that = this;
-        var nonLeakingProduceButton = element(by.css('#m_1'));
 
         browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
@@ -70,12 +65,14 @@ ddescribe('Demomstrate the memory measuring tool', function () {
                     msg(browser, 'Button click iteration ' + i, undefined, 0);
                 }
                     nonLeakFunction();
-                },  // pass in override for default options
+                },
+                // pass in override for default options
                 {
                     preTestInitFunction: function () {
                         nonLeakFunction();
-                    }});
+                    }
+                }
+            );
         });
-
     }, itTimeout);
 });
