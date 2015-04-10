@@ -9,7 +9,7 @@ var sgpt = require('../../../');
  * from previous pages. This might falsify the results.
  * Best results will be revealed when running this test suite in ddescribe and only one test case (iit)
  */
-describe('Demomstrate the memory measuring tool', function () {
+describe('Demonstrate the use of memory measuring tool', function () {
     // Get the messager object to display current test execution status inside the browser
     var msg = sgpt.messager.msg;
 

@@ -129,13 +129,18 @@ The optional `options` object has the following default values:
 {
     writeLogFile: true,
     writeCsvFile: true,
-    generateGraph: true
+    generateGraph: true,
+    preTestInitFunction: undefined,
+    postTestCompleteFunction: undefined
 }
 ```
 
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
+* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started. 
+    This would normally be used to set a baseline in memory consumption. A normal use case would be an iteration of the function that is being tested.
+* `postTestCompleteFunction`: Optional function can be passed to the test to be invoked before final memory measurement is invoked.
 
 The `graphData` parameter is an array of 2 objects for storing the memory results.
 
