@@ -21,10 +21,9 @@ it('tests something', function () {
    // Do something in here that can take a long time.
 }, 1000000);
 ```
-
 Note that the timeout value (set to 1000000 in the test above) is ignored when the test is invoked with iit(). Workaround for this is to use xit() on all the other tests with a ddescribe()
 
-Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test.
+Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test (`.png`). The generated files all use the same naming convention: `M_test-case-name_timestamp.txt/csv/png`, e.g. `M_should-leak_2015-04-01T00-00-00-000Z.csv`
 The following two graphs showcase the memory usage of the two example test cases available at [`example/test/e2e/memory.spec`](../example/test/e2e/memory.spec)
 
 ![Memory Increase due to leak](images/increase.png)
@@ -98,6 +97,7 @@ The optional `options` object has the following default values:
 {
     writeLogFile: true,
     writeCsvFile: true,
+    generateGraph: true
 }
 ```
 
