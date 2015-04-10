@@ -14,13 +14,15 @@ Chrome provides the following values as part of the `window.performance.memory` 
 * usedJSHeapSize
 * totalJSHeapSize
 
-Since these tests often need to run for a longer period of time (several minutes), the `it` function needs to be called with the optional second `timeout` parameter, since the default timeout for Protractor test cases is something like 30 seconds:
+Since these tests often need to run for a longer period of time (several minutes), the `it` function needs to be called with the optional second `timeout` parameter, since the default timeout for Protractor test cases is around 10 seconds:
 
 ```javascript
 it('tests something', function () {
    // Do something in here that can take a long time.
 }, 1000000);
 ```
+
+Note that the timeout value (set to 1000000 in the test above) is ignored when the test is invoked with iit(). Workaround for this is to use xit() on all the other tests with a ddescribe()
 
 Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test.
 The following two graphs showcase the memory usage of the two example test cases available at [`example/test/e2e/memory.spec`](../example/test/e2e/memory.spec)
@@ -44,6 +46,8 @@ The optional `options` object has the following default values:
     finalPostGcSleep: 4500,
     writeLogFile: true,
     writeCsvFile: true,
+    preTestInitFunction: undefined,
+    postTestCompleteFunction: undefined,
     generateGraph: true,
     graphWidth: 800,
     graphHeight: 600
@@ -55,6 +59,8 @@ The optional `options` object has the following default values:
 * `finalPostGcSleep`: Timeout in milliseconds after the final garbage collection.
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
+* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started. 
+* `postTestCompleteFunction`: Optional function can be passed to the test to be invoked before final memory measurement is invoked.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
 * `graphWidth`: Set graph width.
 * `graphHeight`: Set graph height.
@@ -92,7 +98,6 @@ The optional `options` object has the following default values:
 {
     writeLogFile: true,
     writeCsvFile: true,
-    generateGraph: true
 }
 ```
 
@@ -129,18 +134,13 @@ The optional `options` object has the following default values:
 {
     writeLogFile: true,
     writeCsvFile: true,
-    generateGraph: true,
-    preTestInitFunction: undefined,
-    postTestCompleteFunction: undefined
+    generateGraph: true
 }
 ```
 
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
-* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started. 
-    This would normally be used to set a baseline in memory consumption. A normal use case would be an iteration of the function that is being tested.
-* `postTestCompleteFunction`: Optional function can be passed to the test to be invoked before final memory measurement is invoked.
 
 The `graphData` parameter is an array of 2 objects for storing the memory results.
 
