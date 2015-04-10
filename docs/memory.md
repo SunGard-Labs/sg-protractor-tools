@@ -22,7 +22,7 @@ it('tests something', function () {
 }, 1000000);
 ```
 
-Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test.
+Memory utils may be used to generate `*.txt` log files and `*.csv` data files. A graph of the memory usage of your app is also generated during the test (`.png`). The generated files all use the same naming convention: `M_test-case-name_timestamp.txt/csv/png`, e.g. `M_should-leak_2015-04-01T00-00-00-000Z.csv`
 The following two graphs showcase the memory usage of the two example test cases available at [`example/test/e2e/memory.spec`](../example/test/e2e/memory.spec)
 
 ![Memory Increase due to leak](images/increase.png)
