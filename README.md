@@ -16,7 +16,18 @@ The library provides functionality for tracking your app's memory consumption as
 
 The above image shows an example diagram for a test case with 250 iterations. As you can see from the diagram, the used JS Heap size keeps increasing and is never reclaimed. Clearly someone hasn't been doing their homework, this is a pretty big memory leak!
 
-Take a look at the [memory.md](docs/memory.md) file to see the API for running a test that's tracking memory consumption, and check out the [memory.spec](example/test/e2e/memory.spec) file for the library in action.
+Take a look at the [memory.md](docs/memory.md) file to see the API for running a test that's tracking memory consumption, and check out the [memory.spec](example/test/e2e/memory.spec) file for the library in action. The test code that you need to write is only a couple of lines:
+
+```javascript
+it('should increase the memory consumption', function () {
+    var iterations = 250;
+
+    sgpt.memory.runTestFunction(this, iterations, function () {
+        // Your test code goes here.
+        // This test function will be called 250 times, and the memory is measured after each iteration.
+    });
+}, 100000);
+```
 
 *Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](protractor.conf.js) file to see the required configuration.*
 
