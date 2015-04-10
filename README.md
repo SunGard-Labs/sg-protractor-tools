@@ -12,11 +12,11 @@ The [docs](docs) folder has more detailed information about the provided functio
 
 The library provides functionality for tracking your app's memory consumption as part of a Protractor test. When running multiple iterations of the same operation, this can be used to detect memory leaks in your application's code. To make things as easy as possible, we have encapsulated the required code in a simple function that allows you to focus on your test. The library takes care of running your test a configurable number of times, and it also takes care of tracking the memory usage. Once the test has been completed, you can use the generated CSV file to anaylze the memory usage, and you can also get a quick overview by taking a look at the generated PNG diagram. Here's an example:
 
-![docs/images/memory-generated.png](An example memory diagram)
+![An example memory diagram](docs/images/memory-generated.png)
 
 The above image shows an example diagram for a test case with 250 iterations. As you can see from the diagram, the used JS Heap size keeps increasing and is never reclaimed. Clearly someone hasn't been doing their homework, this is a pretty big memory leak!
 
-Take a look at the [docs/memory.md](memory.md) file to see the API for running a test that's tracking memory consumption, and check out the [example/test/e2e/memory.spec](memory.spec) file for the library in action.
+Take a look at the [memory.md](docs/memory.md) file to see the API for running a test that's tracking memory consumption, and check out the [memory.spec](example/test/e2e/memory.spec) file for the library in action.
 
 *Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](protractor.conf.js) file to see the required configuration.*
 
