@@ -46,7 +46,9 @@ The optional `options` object has the following default values:
     writeCsvFile: true,
     generateGraph: true,
     graphWidth: 800,
-    graphHeight: 600
+    graphHeight: 600,
+    preTestInitFunction: undefined,
+    postTestCompleteFunction: undefined
 }
 ```
 
@@ -58,6 +60,8 @@ The optional `options` object has the following default values:
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
 * `graphWidth`: Set graph width.
 * `graphHeight`: Set graph height.
+* `preTestInitFunction`: Optional function, can be passed to the test to be invoked after the initial garbage collection, but before memory measurement is started. This would normally be used to set a baseline in memory consumption. A normal use case would be an iteration of the function that is being tested, or any other memory-intensive initialization that will happen as part of your test, but shouldn't be recorded as part of the test.
+* `postTestCompleteFunction`: Optional function, can be passed to the test to be invoked before final memory measurement is invoked.
 
 Example usage:
 
@@ -138,9 +142,8 @@ The optional `options` object has the following default values:
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
-* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started. 
-    This would normally be used to set a baseline in memory consumption. A normal use case would be an iteration of the function that is being tested.
-* `postTestCompleteFunction`: Optional function can be passed to the test to be invoked before final memory measurement is invoked.
+* `preTestInitFunction`: Optional function, can be passed to the test to be invoked after the initial garbage collection, but before memory measurement is started. This would normally be used to set a baseline in memory consumption. A normal use case would be an iteration of the function that is being tested, or any other memory-intensive initialization that will happen as part of your test, but shouldn't be recorded as part of the test.
+* `postTestCompleteFunction`: Optional function, can be passed to the test to be invoked before final memory measurement is invoked.
 
 The `graphData` parameter is an array of 2 objects for storing the memory results.
 
