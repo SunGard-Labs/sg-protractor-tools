@@ -16,8 +16,8 @@ Chrome provides the following values as part of the `window.performance.memory` 
 
 Since these tests often need to run for a longer period of time (several minutes), the `it` function needs to be called with the optional second `timeout` parameter, since the default timeout for Protractor test cases is something like 30 seconds:
 
-```
-it('tests something', function () {    
+```javascript
+it('tests something', function () {
    // Do something in here that can take a long time.
 }, 1000000);
 ```
@@ -33,11 +33,11 @@ The following two graphs showcase the memory usage of the two example test cases
 
 ### `runTestFunction(protractorTestInstance, iterations, testFn[, options])`
 
-Allows to run a defined test function (`testFn`) a number of times (`iterations`) as part of a Protractor test (`protractorTestInstance`), tracking the memory usage after each call.
+Allows to run a defined test function (`testFn`) a number of times (`iterations`) as part of a Protractor test (`protractorTestInstance`), tracking the memory usage after each call. The `testFn` function is called with one parameter: `index` - the current iteration.
 
 The optional `options` object has the following default values:
 
-```
+```javascript
 {
     initialPostGcSleep: 2500,
     finalPostTestSleep: 1500,
@@ -61,10 +61,10 @@ The optional `options` object has the following default values:
 
 Example usage:
 
-```
+```javascript
 function changeFilterDate(date) {
-    var datePicker = element(by.css("[sgid='filters_effectiveDate_1']"));
-    datePicker.sendKeys("", protractor.Key.CONTROL, "a", protractor.Key.NULL, date).sendKeys(protractor.Key.ENTER);
+    var datePicker = element(by.id('myID'));
+    datePicker.sendKeys('', protractor.Key.CONTROL, 'a', protractor.Key.NULL, date).sendKeys(protractor.Key.ENTER);
 }
 
 it('tests something', function () {
@@ -78,13 +78,17 @@ it('tests something', function () {
 
 The above example defines a function that changes a field in the UI, triggering some action, e.g. refreshing a grid. The `runTestFunction` call then executes the `changeFilterDate` function (through an anonymous function) 100 times, incrementing the example date parameter each time. The test results are written to a log file, a CSV file and a graph is generated.
 
+## Low-level Functions
+
+The following functions are used internally, but can also be used from your own code. Most test cases should stick to the above `runTestFunction` API, though.
+
 ### `startMemoryMeasurement(protractorTestInstance[, options])`
 
 Convenience function for initializing memory measurement of a given protractor test case. Returns an object with `measureMemory([isLast])` and `callGarbageCollection()` methods like below.
 
 The optional `options` object has the following default values:
 
-```
+```javascript
 {
     writeLogFile: true,
     writeCsvFile: true,
@@ -100,7 +104,7 @@ By default, the results are written to a log file (in textual form, comparing ea
 
 Example usage:
 
-```
+```javascript
 it('tests something', function () {
     var memoryMeasure = html5.memory.startMemoryMeasurement(this);
     [...]
@@ -121,7 +125,7 @@ The optional `isLast` parameter can be used to indicate that this is the final c
 
 The optional `options` object has the following default values:
 
-```
+```javascript
 {
     writeLogFile: true,
     writeCsvFile: true,
@@ -137,7 +141,7 @@ The `graphData` parameter is an array of 2 objects for storing the memory result
 
 Returns a promise object that (when resolved) has the following attributes:
 
-```
+```javascript
 {
     jsHeapSizeLimit,
     usedJSHeapSize,
@@ -147,7 +151,7 @@ Returns a promise object that (when resolved) has the following attributes:
 
 Example:
 
-```
+```javascript
 var promise = html5.memory.measureMemory();
 promise.then(function (result) {
     myResult = result;
@@ -172,7 +176,7 @@ If a filename is specified the results will appended to that file.
 
 The optional `options` object has the following default values:
 
-```
+```javascript
 {
     writeLogFile: true
 }
