@@ -7,8 +7,8 @@ var sgpt = require('../../../');
 /**
  * Note: Do not run both test cases simultaneously, as even after page reload memory consumption might be influenced
  * from previous pages. This might falsify the results.
- * Best results with memory measurement will be revealed when running this test suite using ddescribe()and
- * only one test case by commenting the other one(s) using  xit().
+ * Best results with memory measurement will be revealed when running this test suite using ddescribe() and
+ * only one test case by commenting the other one(s) using xit().
  */
 describe('Demonstrate the use of memory measuring tool', function () {
     // Get the messager object to display current test execution status inside the browser
@@ -27,7 +27,7 @@ describe('Demonstrate the use of memory measuring tool', function () {
         nonLeakingProduceButton.click();
     }
 
-    iit('should increase the memory consumption when invoking a leaking function', function () {
+    it('should increase the memory consumption when invoking a leaking function', function () {
         var iterations = 250;
         browser.sleep(1000);
 
