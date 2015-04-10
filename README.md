@@ -25,8 +25,9 @@ it('should increase the memory consumption', function () {
     var iterations = 250;
 
     sgpt.memory.runTestFunction(this, iterations, function () {
-        // Your test code goes here.
         // This test function will be called 250 times, and the memory is measured after each iteration.
+
+        // Your test code goes here.
     });
 }, 100000);
 ```
@@ -66,7 +67,7 @@ This will expose the libraries main object as `sgpt` in your code. You can use t
 sgpt.scroll.scrollTo(...);
 ```
 
-The library's functions are split up by their domain, e.g. all functions relating to resizing windows are grouped under the `sgpt.resize` object.
+The library's functions are split up by their domain, e.g. all functions relating to resizing windows are grouped under the `sgpt.resize` object. Take a look at the [docs](docs) folder for more information.
 
 ## Examples
 
