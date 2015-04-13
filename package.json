@@ -7,7 +7,6 @@
     "doc": "docs"
   },
   "scripts": {
-  	"preinstall": "npm i phantom@^0.7.2 --no-optional",
     "test": "grunt test"
   },
   "repository": {
@@ -48,6 +47,7 @@
   },
   "dependencies": {
     "d3": "^3.5.5",
+    "phantom": "^0.7.2",
     "phantomjs": "^1.9.16",
     "requireindex": "^1.1.0",
     "underscore": "^1.7.0"
