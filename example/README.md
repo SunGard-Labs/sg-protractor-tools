@@ -16,8 +16,8 @@ bower install
 
 ## Run Tests
 
-- Start a local server by executing `grunt serve`. The server will be available at `http://localhost:9000` by default
-- Run the e2e tests by executing `grunt protractor`
+- Start a local server by executing `grunt serve`. The server will be available at `http://localhost:9000` by default.
+- Run the e2e tests by executing `grunt protractor` from a second terminal. The test cases will run against the server started using the above command.
 
 ## Test Code
 
