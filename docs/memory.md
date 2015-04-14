@@ -58,7 +58,7 @@ The optional `options` object has the following default values:
 * `finalPostGcSleep`: Timeout in milliseconds after the final garbage collection.
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
-* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started. 
+* `preTestInitFunction`: Optional function can be passed to the test to be invoked before memory measurement is started.
 * `postTestCompleteFunction`: Optional function can be passed to the test to be invoked before final memory measurement is invoked.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
 * `graphWidth`: Set graph width.
