@@ -22,3 +22,5 @@ bower install
 ## Test Code
 
 The test cases highlighting the usage of the `sg-protractor-tools` library can be found in the [test/e2e/](test/e2e) folder.
+
+The `memory.js` test case will generate its result files in the `example` folder.
