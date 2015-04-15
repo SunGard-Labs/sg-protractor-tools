@@ -32,7 +32,7 @@ it('should increase the memory consumption', function () {
 }, 100000);
 ```
 
-*Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](protractor.conf.js) file to see the required configuration.*
+*Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](example/protractor.conf.js) file to see the required configuration.*
 
 ### Minor helper functions
 
