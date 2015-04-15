@@ -12,7 +12,7 @@ The [docs](docs) folder has more detailed information about the provided functio
 
 ### Memory Tracking
 
-The library provides functionality for tracking your app's memory consumption as part of a Protractor test. When running multiple iterations of the same operation, this can be used to detect memory leaks in your application's code. To make things as easy as possible, we have encapsulated the required code in a simple function that allows you to focus on your test. The library takes care of running your test a configurable number of times, and it also takes care of tracking the memory usage. Once the test has been completed, you can use the generated CSV file to anaylze the memory usage, and you can also get a quick overview by taking a look at the generated PNG diagram. Here's an example:
+The library provides functionality for tracking your app's memory consumption as part of a Protractor test. When running multiple iterations of the same operation, this can be used to detect memory leaks in your application's code. To make things as easy as possible, we have encapsulated the required code in a simple function that allows you to focus on your test. The library takes care of running your test a configurable number of times, and it also takes care of tracking the memory usage. Once the test has been completed, you can use the generated CSV file to analyze the memory usage, and you can also get a quick overview by taking a look at the generated PNG diagram. Here's an example:
 
 ![An example memory diagram](docs/images/memory-generated.png)
 
