@@ -1,6 +1,6 @@
 # sg-protractor-tools
 
-Version: 0.3.0
+Version: 0.3.1-SNAPSHOT
 
 This library provides a reusable and generic set of helper functions for the Protractor test framework, which SunGard is using for testing its HTML5-based user interfaces. It includes functions that simplify things like browser resizing, scrolling and memory usage tracking as part of a test suite. The project bundles an example application that showcases the functionality.
 
@@ -12,7 +12,7 @@ The [docs](docs) folder has more detailed information about the provided functio
 
 ### Memory Tracking
 
-The library provides functionality for tracking your app's memory consumption as part of a Protractor test. When running multiple iterations of the same operation, this can be used to detect memory leaks in your application's code. To make things as easy as possible, we have encapsulated the required code in a simple function that allows you to focus on your test. The library takes care of running your test a configurable number of times, and it also takes care of tracking the memory usage. Once the test has been completed, you can use the generated CSV file to anaylze the memory usage, and you can also get a quick overview by taking a look at the generated PNG diagram. Here's an example:
+The library provides functionality for tracking your app's memory consumption as part of a Protractor test. When running multiple iterations of the same operation, this can be used to detect memory leaks in your application's code. To make things as easy as possible, we have encapsulated the required code in a simple function that allows you to focus on your test. The library takes care of running your test a configurable number of times, and it also takes care of tracking the memory usage. Once the test has been completed, you can use the generated CSV file to analyze the memory usage, and you can also get a quick overview by taking a look at the generated PNG diagram. Here's an example:
 
 ![An example memory diagram](docs/images/memory-generated.png)
 
@@ -32,7 +32,7 @@ it('should increase the memory consumption', function () {
 }, 100000);
 ```
 
-*Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](protractor.conf.js) file to see the required configuration.*
+*Note: The memory tracking functionality only works in Google Chrome, when started with the `enable-precise-memory-info` and `js-flags=--expose-gc` flags. Other browsers currently don't expose a similar API. Take a look at the [example/protractor.conf.js](example/protractor.conf.js) file to see the required configuration.*
 
 ### Minor helper functions
 
