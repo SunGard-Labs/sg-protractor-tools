@@ -39,6 +39,10 @@ angular
                 templateUrl: 'views/dom.html',
                 controller: 'DomCtrl'
             })
+            .when('/consoleLogs', {
+                templateUrl: 'views/consolelogs.html',
+                controller: 'ConsoleCtrl'
+            })
             .when('/memoryTest', {
                 templateUrl: 'views/memoryview.html',
                 controller: 'MemoryCtrl'
