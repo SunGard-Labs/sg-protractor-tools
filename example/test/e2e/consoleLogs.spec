@@ -6,7 +6,6 @@ var sgpt = require('../../../');
 
 describe('Testing the getting of consoleLogs function', function () {
 
-    var webDriver = browser.driver;
     var isPositiveTest = true;
 
     // Get the messager object to display current test execution status inside the browser
@@ -19,24 +18,27 @@ describe('Testing the getting of consoleLogs function', function () {
 
     afterEach(function (done) {
         var consoleLogPromise = sgpt.consoleLogs.consoleLogs(done);
+
         consoleLogPromise.then(function (logs) {
             var containsError = false;
+
             logs.forEach(function (log) {
                 if (log.level.value > 900) {
                     containsError = true;
                 }
             });
+
             if (isPositiveTest) {
                 expect(containsError).toBeFalsy();
             }
             else {
                 expect(containsError).toBeTruthy();
             }
+
             // does not always seem to work consistently.
             // only sure way seems to reload application completely.
             browser.executeScript('console.clear();');
         });
-        done();
     });
 
 

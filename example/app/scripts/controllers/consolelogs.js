@@ -11,9 +11,9 @@ angular.module('exampleApp')
     .controller('ConsoleCtrl', function ($scope) {
 
         $scope.logError = function() {
-            console.error("An Error is logged");
+            console.error('An Error is logged');
         };
         $scope.logMessage = function() {
-            console.log("A message is logged");
+            console.log('A message is logged');
         };
     });
