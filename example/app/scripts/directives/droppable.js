@@ -24,29 +24,29 @@ angular.module('exampleApp').directive('droppable', function () {
                     if (e.preventDefault) {
                         e.preventDefault();
                     }
-                    $(this).addClass(droppableCssClass);
+                    angular.element(this).addClass(droppableCssClass);
                     return false;
                 },
                 false
             );
 
-            el.addEventListener('dragenter', function (e) {
-                    $(this).addClass(droppableCssClass);
+            el.addEventListener('dragenter', function () {
+                    angular.element(this).addClass(droppableCssClass);
                     return false;
                 },
                 false
             );
 
 
-            el.addEventListener('dragleave', function (e) {
-                    $(this).removeClass(droppableCssClass);
+            el.addEventListener('dragleave', function () {
+                    angular.element(this).removeClass(droppableCssClass);
                     return false;
                 },
                 false
             );
 
             el.addEventListener('drop', function (e) {
-                    var $this = $(this);
+                    var $this = angular.element(this);
                     // Stops some browsers from redirecting.
                     if (e.stopPropagation) {
                         e.stopPropagation();
@@ -55,7 +55,7 @@ angular.module('exampleApp').directive('droppable', function () {
                     $this.removeClass(droppableCssClass);
 
                     var itemId = e.dataTransfer.getData('Text');
-                    var item = $('#' + itemId);
+                    var item = angular.element('#' + itemId);
                     var binId = this.id;
 
                     var dropInsert = $this.find('[drop-insert]');
@@ -78,5 +78,5 @@ angular.module('exampleApp').directive('droppable', function () {
                 false
             );
         }
-    }
+    };
 });

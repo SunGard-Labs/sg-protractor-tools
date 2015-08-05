@@ -8,5 +8,5 @@
  * Controller of the exampleApp
  */
 angular.module('exampleApp')
-    .controller('ResizeCtrl', function ($scope) {
+    .controller('ResizeCtrl', function () {
     });

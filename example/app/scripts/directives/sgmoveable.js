@@ -7,10 +7,10 @@
  * # sgMoveable
  */
 angular.module('exampleApp')
-    .directive('sgMoveable', function ($document, $window) {
+    .directive('sgMoveable', function ($document) {
         return {
             restrict: 'A',
-            link: function postLink(scope, element, attrs) {
+            link: function postLink(scope, element) {
                 var startX = 0, startY = 0, x = 0, y = 0;
                 element.css('position', 'absolute');
 
