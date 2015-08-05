@@ -26,11 +26,11 @@ angular.module('exampleApp').directive('draggable', function() {
             false
         );
 
-        el.addEventListener('dragend', function(e) {
+        el.addEventListener('dragend', function() {
                 this.classList.remove('drag');
                 return false;
             },
             false
         );
-    }
+    };
 });

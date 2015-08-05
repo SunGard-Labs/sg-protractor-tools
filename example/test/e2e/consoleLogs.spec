@@ -21,7 +21,6 @@ describe('Testing the getting of consoleLogs function', function () {
 
         consoleLogPromise.then(function (logs) {
             var containsError = false;
-
             logs.forEach(function (log) {
                 if (log.level.value > 900) {
                     containsError = true;
@@ -35,9 +34,8 @@ describe('Testing the getting of consoleLogs function', function () {
                 expect(containsError).toBeTruthy();
             }
 
-            // does not always seem to work consistently.
-            // only sure way seems to reload application completely.
-            browser.executeScript('console.clear();');
+            // use protractor to clear browser cache
+            browser.manage().logs().get('browser');
         });
     });
 

@@ -28,7 +28,7 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    sg_release: {
+    'sg_release': {
       options: {
         skipBowerInstall: true,
         developBranch: 'develop',

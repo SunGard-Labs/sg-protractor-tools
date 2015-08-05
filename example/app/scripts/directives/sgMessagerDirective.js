@@ -11,12 +11,12 @@ angular.module('exampleApp').directive('sgMessager', function () {
 		replace: true,
 		template :  '<div class="{{ messageClasses }}">' +
 						'<input id="sgMessagerMessageInput" type="text" ng-model="currentMessageKey" class="sg-messager-input" style="margin-top:10px;">' +
-						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input" style="margin-top:12px;">' + 
+						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input" style="margin-top:12px;">' +
 						'<input id="sgMessagerPosition" type="text" ng-model="messagerPosition" class="sg-messager-input" style="margin-top:14px;">' +
 						'<input type="button" value="-" ng-click="toggleMessageArea()" class="sg-messager-area-icons">' +
 						'{{ currentMessage }}<br>' +
 					'</div>',
-        link: function (scope, element, attrs) {
+        link: function (scope) {
             scope.showMessages = false;
 			scope.styleState = '';
 			scope.reducedState = '';

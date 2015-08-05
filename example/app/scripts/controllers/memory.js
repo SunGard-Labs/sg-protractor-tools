@@ -10,10 +10,10 @@
 angular.module('exampleApp')
     .controller('MemoryCtrl', function ($scope, $compile) {
         $scope.produceNonLeaking = function () {
-            angular.element("#memoryContainer").html($compile('<memory-directive leak="false"></memory-directive>')($scope));
+            angular.element('#memoryContainer').html($compile('<memory-directive leak="false"></memory-directive>')($scope));
         };
 
         $scope.produceLeak = function (){
-            angular.element("#memoryContainer").html($compile('<memory-directive leak="true"></memory-directive>')($scope));
-        }
+            angular.element('#memoryContainer').html($compile('<memory-directive leak="true"></memory-directive>')($scope));
+        };
     });
