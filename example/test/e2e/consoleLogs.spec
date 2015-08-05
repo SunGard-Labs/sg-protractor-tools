@@ -34,9 +34,8 @@ describe('Testing the getting of consoleLogs function', function () {
                 expect(containsError).toBeTruthy();
             }
 
-            // does not always seem to work consistently.
-            // only sure way seems to reload application completely.
-            browser.executeScript('console.clear();');
+            // use protractor to clear browser cache
+            browser.manage().logs().get('browser');
         });
     });
 
