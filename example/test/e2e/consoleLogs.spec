@@ -21,7 +21,6 @@ describe('Testing the getting of consoleLogs function', function () {
 
         consoleLogPromise.then(function (logs) {
             var containsError = false;
-
             logs.forEach(function (log) {
                 if (log.level.value > 900) {
                     containsError = true;
