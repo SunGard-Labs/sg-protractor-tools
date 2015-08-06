@@ -33,15 +33,15 @@ describe('Testing dom module function', function () {
         msg(browser, 'Step 1) Starting a game, waiting till hidden...');
         startButton.click();
         sgpt.dom.waitForNotDisplayed(yeoman);
-
         expect(yeoman.isDisplayed()).toBeFalsy();
 
         msg(browser, 'Step 2) Seeking yeoman...');
         seekButton.click();
-        sgpt.dom.waitForDisplayed(yeoman);
+        sgpt.dom.waitForDisplayed(yeoman).then(function() {
+            expect(yeoman.isDisplayed()).toBeTruthy();
+            msg(browser, 'Step 3) Hide and seek complete');
+        });
 
-        expect(yeoman.isDisplayed()).toBeTruthy();
-        msg(browser, 'Step 3) Hide and seek complete');
     }, 20000);
 
 });
