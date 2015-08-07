@@ -4,7 +4,7 @@
 
 ### `scrollTo(scrollToElement)`
 
-Scrolls the current page to the specified element's vertical position.
+Scrolls the current page to the specified element's vertical position. Returns a promise that will be resolved when the command has completed.
 
 ```
 html5.scroll.scrollTo(element(by.css("div[sg-unique-id-seed='grid_6']")));
