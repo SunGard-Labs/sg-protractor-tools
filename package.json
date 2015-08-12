@@ -46,6 +46,7 @@
     "mocha": "^1.21.4"
   },
   "dependencies": {
+    "cli-color": "^1.0.0",
     "d3": "^3.5.5",
     "phantom": "^0.7.2",
     "phantomjs": "^1.9.16",
