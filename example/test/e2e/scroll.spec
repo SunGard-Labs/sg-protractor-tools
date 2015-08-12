@@ -54,7 +54,7 @@ describe('Testing protractor scrolling function', function () {
         msg(browser, 'Step 3) Button clicked, the message should now read "Goodbye World"');
 
         // The click should now have worked so we expect the obstructor test to have changed
-        expect(element(by.css('div.button-obstructor')).getText()).toBe('Goodbye World');        
+        expect(element(by.css('div.button-obstructor')).getText()).toBe('Goodbye World');
 
     }, 20000);
 

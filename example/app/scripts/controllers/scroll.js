@@ -8,8 +8,8 @@
  * Controller of the exampleApp
  */
 angular.module('exampleApp')
-  .controller('ScrollCtrl', function ($scope) {
-    $scope.foo = function() {
-        angular.element('div.button-obstructor').text('Goodbye World');
-    };
-  });
+    .controller('ScrollCtrl', function ($scope) {
+        $scope.foo = function () {
+            angular.element('div.button-obstructor').text('Goodbye World');
+        };
+    });

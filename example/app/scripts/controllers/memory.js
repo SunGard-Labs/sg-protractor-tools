@@ -13,7 +13,7 @@ angular.module('exampleApp')
             angular.element('#memoryContainer').html($compile('<memory-directive leak="false"></memory-directive>')($scope));
         };
 
-        $scope.produceLeak = function (){
+        $scope.produceLeak = function () {
             angular.element('#memoryContainer').html($compile('<memory-directive leak="true"></memory-directive>')($scope));
         };
     });
