@@ -1,16 +1,40 @@
 <div class="row">
     <div class="col-md-12">
-        <p>This page shows a how to check for console errors in a protractor.</p>
-        <p>Clicking <span class="label label-primary">Error</span> button will result in a console error.</p>
-        <p>Clicking <span class="label label-primary">Message</span> button will result in a console message.</p>
+        <p>This page shows a how to check for console errors in a protractor. Press <kbd>F12</kbd> to show the developer
+            tools.</p>
+
+        <p>Clicking <span class="label label-danger">Error</span> button will result in a console error. Clicking <span class="label label-primary">Info</span> or <span class="label label-warning">Warning</span>
+            button will result in a respective console message. The <span class="label label-default">Message</span> button will log a message to the console using commonly used <i>console.log()</i>.</p>
+        <p>Note that console output generated with <i>console.log()</i> and <i>console.debug()</i> can not be retrieved from the browser.</p>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <h2>Create error
-            <p><button class="btn btn-primary btn-block" id="errorButton" ng-click="logError()">Error</button></p>
-            <p><button class="btn btn-secondary btn-block" id="messageButton" ng-click="logMessage()">Message</button></p>
-        </h2>
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Log to console</div>
+            <div class="panel-body">
+                <div class="col-sm-3">
+                    <button class="btn btn-lg btn-danger btn-block" id="errorButton" ng-click="logError()"><span
+                            class="glyphicon glyphicon-remove-sign" style="font-size: 34px;"></span><br/>Error
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-lg btn-warning btn-block" id="warningButton" ng-click="logWarning()"><span
+                            class="glyphicon glyphicon-exclamation-sign" style="font-size: 34px;"></span><br/>Warning
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-lg btn-primary btn-block" id="infoButton" ng-click="logInfo()"><span
+                            class="glyphicon glyphicon-info-sign" style="font-size: 34px;"></span><br/>Info
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-lg btn-default btn-block" id="messageButton" ng-click="logMessage()"><span
+                            class="glyphicon glyphicon-envelope" style="font-size: 34px;"></span><br/>Message
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

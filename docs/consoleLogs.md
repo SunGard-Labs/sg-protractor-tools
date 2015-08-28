@@ -2,15 +2,33 @@
 
 ## Functions
 
+### `expectNoErrors(testSuite)`, `expectNoWarnings(testSuite)`, `expectNoInfo(testSuite)`
+
+Convenience function that tests in "afterEach" callback of the given jasmine test suite whether errors (warnings, infos respectively) exist in the browser console. If any test case produced a console output with the specific priority level or higher, it will fail.
+E.g. In a test suite with `expectNoWarnings(this)` used, all test cases will fail which produce either warning or error console outputs.
+Note: It is recommended to reload the page before every test case (in beforeEach() callback function), as this is the safest way clearing the console (cross-browser).
+
+#### Usage Example
+
+```javascript
+describe('my suite', function(){
+    html5.consoleLogs.expectNoErrors(this);
+
+    it('should test something, function(){
+    
+    });
+});
+```
+
 ### `consoleLogs(done)`
 
-Returns a Promise Object that contains an array of console logs.
+Returns a Promise Object that contains an array of console logs. Note that only messages logged with console.info(), console.warn() and console.error() will be retrieved.
 
 ```
 html5.consoleLogs.consoleLogs(done);
 ```
 
-## Usage Example
+#### Usage Example
 
 Access to the console logs allows writing tests that verify that no errors are thrown to the console. Note that accessing the browser logs will always return all the browser logs. If you wish to start each test with a clean log, you should ideally restart the application you wish to test.
 
@@ -36,7 +54,7 @@ the logs have been populated. While it is not necessary to pass a `done` functio
         value: 1000,
         name: 'SEVERE'
     },
-    message: 'the severe errror message',
+    message: 'the severe error message',
     timestamp: 1432029414834,
     type: ''
 }

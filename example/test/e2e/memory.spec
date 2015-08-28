@@ -35,10 +35,10 @@ describe('Demonstrate the use of memory measuring tool', function () {
 
         browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
-                if (i % 10 === 0) {
-                    // Every ten iterations update the label
-                    msg(browser, 'Button click iteration ' + i, undefined, 0);
-                }
+                    if (i % 10 === 0) {
+                        // Every ten iterations update the label
+                        msg(browser, 'Button click iteration ' + i, undefined, 0);
+                    }
                     leakFunction();
                 },
                 // pass in override for default options
@@ -60,10 +60,10 @@ describe('Demonstrate the use of memory measuring tool', function () {
 
         browser.get('#/memoryTest', 30000).then(function () {
             sgpt.memory.runTestFunction(that, iterations, function (i) {
-                if (i % 10 === 0) {
-                    // Every ten iterations update the label
-                    msg(browser, 'Button click iteration ' + i, undefined, 0);
-                }
+                    if (i % 10 === 0) {
+                        // Every ten iterations update the label
+                        msg(browser, 'Button click iteration ' + i, undefined, 0);
+                    }
                     nonLeakFunction();
                 },
                 // pass in override for default options

@@ -1,6 +1,6 @@
 {
   "name": "sg-protractor-tools",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "Library of reusable helper functions for testing HTML5 applications with Protractor",
   "main": "index.js",
   "directories": {
@@ -25,14 +25,38 @@
   ],
   "author": "SunGard",
   "contributors": [
-      { "name": "Akho Tshweza", "email": "akho.tshweza@sungard.com" },
-      { "name": "Antony Davis", "email": "antony.davis@sungard.com" },
-      { "name": "Carl Woermann", "email": "carl.woermann@sungard.com" },
-      { "name": "Dewald Jacobs", "email": "dewald.jacobs@sungard.com" },
-      { "name": "Faan Walters", "email": "faan.walters@sungard.com" },
-      { "name": "Keir Timm", "email": "keir.timm@sungard.com" },
-      { "name": "Nils Winkler", "email": "nils.winkler@sungard.com" },
-      { "name": "Sebastian Fuss", "email": "sebastian.fuss@sungard.com" }
+    {
+      "name": "Akho Tshweza",
+      "email": "akho.tshweza@sungard.com"
+    },
+    {
+      "name": "Antony Davis",
+      "email": "antony.davis@sungard.com"
+    },
+    {
+      "name": "Carl Woermann",
+      "email": "carl.woermann@sungard.com"
+    },
+    {
+      "name": "Dewald Jacobs",
+      "email": "dewald.jacobs@sungard.com"
+    },
+    {
+      "name": "Faan Walters",
+      "email": "faan.walters@sungard.com"
+    },
+    {
+      "name": "Keir Timm",
+      "email": "keir.timm@sungard.com"
+    },
+    {
+      "name": "Nils Winkler",
+      "email": "nils.winkler@sungard.com"
+    },
+    {
+      "name": "Sebastian Fuss",
+      "email": "sebastian.fuss@sungard.com"
+    }
   ],
   "license": "MIT",
   "devDependencies": {
@@ -46,6 +70,7 @@
     "mocha": "^1.21.4"
   },
   "dependencies": {
+    "cli-color": "^1.0.0",
     "d3": "^3.5.5",
     "phantom": "^0.7.2",
     "phantomjs": "^1.9.16",

@@ -40,10 +40,6 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 }
             },
-            jsTest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['newer:jshint:test', 'karma']
-            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
@@ -124,7 +120,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    jshintrc: 'test/.jshintrc'
+                    jshintrc: '.jshintrc'
                 },
                 src: ['test/spec/{,*/}*.js']
             }
@@ -396,8 +392,7 @@ module.exports = function (grunt) {
         'clean:server',
         'concurrent:test',
         'autoprefixer',
-        'connect:test',
-        'karma'
+        'connect:test'
     ]);
 
     grunt.registerTask('build', [
@@ -418,8 +413,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
-        'build'
+        'jshint',
+        'test'
     ]);
 };
