@@ -7,7 +7,7 @@ exports.config = {
 
   capabilities: {
     'browserName': 'chrome',
-    'chromeOptions': {'args': ['lang=en-GB',  'enable-precise-memory-info' , 'js-flags=--expose-gc']}
+    'chromeOptions': {'args': ['lang=en-GB',  'enable-precise-memory-info' , 'js-flags=--expose-gc', 'no-sandbox']}
   },
 
   // A base URL for your application under test. Calls to protractor.get()
@@ -22,3 +22,7 @@ exports.config = {
     defaultTimeoutInterval: 10000
   }
 };
+
+if (process.env.TRAVIS) {
+	exports.config.capabilities.chromeOptions.binary = __dirname + '/../chrome-linux/chrome';
+}
