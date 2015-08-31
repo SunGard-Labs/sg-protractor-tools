@@ -20,4 +20,4 @@ script:
   - grunt
   - cd example && grunt
   - cd $TRAVIS_BUILD_DIR
-  - cd example && grunt protractor
+  - cd example && grunt protractor --force
