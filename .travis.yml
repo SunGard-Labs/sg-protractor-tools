@@ -5,4 +5,4 @@ before_install:
   - npm install -g grunt-cli
 script:
   - grunt
-  - cd example && grunt ; cd ..
+  - cd example && npm install && bower install && grunt ; cd ..
