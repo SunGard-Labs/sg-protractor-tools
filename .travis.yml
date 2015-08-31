@@ -11,9 +11,13 @@ install:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+  - cd example && grunt serve
+  - sleep 3
 script:
+  - cd $TRAVIS_BUILD_DIR
   - grunt
   - cd example && grunt
   - cd $TRAVIS_BUILD_DIR
-  - cd example && grunt travis-protractor
+  - cd example && grunt protractor
   - cd $TRAVIS_BUILD_DIR
