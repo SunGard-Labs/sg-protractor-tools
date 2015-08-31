@@ -412,6 +412,15 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
+    grunt.registerTask('travis-protractor', [
+        'clean:server',
+        'wiredep',
+        'concurrent:server',
+        'autoprefixer',
+        'connect:test',
+        'protractor'
+    ]);
+
     grunt.registerTask('default', [
         'jshint',
         'test'
