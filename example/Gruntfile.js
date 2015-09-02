@@ -360,7 +360,7 @@ module.exports = function (grunt) {
         },
         protractor: {
             options: {
-                keepAlive: true,
+                keepAlive: false,
                 configFile: 'protractor.conf.js'
             },
             run: {}
@@ -410,6 +410,15 @@ module.exports = function (grunt) {
         'filerev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('travis-protractor', [
+        'clean:server',
+        'wiredep',
+        'concurrent:server',
+        'autoprefixer',
+        'connect:test',
+        'protractor'
     ]);
 
     grunt.registerTask('default', [
