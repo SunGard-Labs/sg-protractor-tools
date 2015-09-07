@@ -1,6 +1,6 @@
 {
   "name": "sg-protractor-tools",
-  "version": "1.0.2-SNAPSHOT",
+  "version": "1.0.2",
   "description": "Library of reusable helper functions for testing HTML5 applications with Protractor",
   "main": "index.js",
   "directories": {
