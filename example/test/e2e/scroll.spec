@@ -46,16 +46,16 @@ describe('Testing protractor scrolling function', function () {
         expect(element(by.css('div.button-obstructor')).getText()).toBe('Hello World');
 
         // Scroll to make button visible
-        sgpt.scroll.scrollTo(goodbyeButton);
-        msg(browser, 'Step 2) Now attempting to click the button..');
+        sgpt.scroll.scrollTo(goodbyeButton).then(function() {
+            msg(browser, 'Step 2) Now attempting to click the button..');
 
-        // Click on the now visible button
-        moveAndClickMouse(goodbyeButton, 5, 5);
-        msg(browser, 'Step 3) Button clicked, the message should now read "Goodbye World"');
+            // Click on the now visible button
+            moveAndClickMouse(goodbyeButton, 5, 5);
+            msg(browser, 'Step 3) Button clicked, the message should now read "Goodbye World"');
 
-        // The click should now have worked so we expect the obstructor test to have changed
-        expect(element(by.css('div.button-obstructor')).getText()).toBe('Goodbye World');
-
+            // The click should now have worked so we expect the obstructor test to have changed
+            expect(element(by.css('div.button-obstructor')).getText()).toBe('Goodbye World');
+        });
     }, 20000);
 
 });
