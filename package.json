@@ -72,6 +72,7 @@
   "dependencies": {
     "cli-color": "^1.0.0",
     "d3": "^3.5.5",
+    "mkdirp": "^0.5.1",
     "phantom": "^0.7.2",
     "phantomjs": "^1.9.16",
     "requireindex": "^1.1.0",
