@@ -40,6 +40,7 @@ The optional `options` object has the following default values:
 
 ```javascript
 {
+    dir: '',
     initialPostGcSleep: 2500,
     finalPostTestSleep: 1500,
     finalPostGcSleep: 4500,
@@ -53,6 +54,7 @@ The optional `options` object has the following default values:
 }
 ```
 
+* `dir`: Directory to output reports. Defaults to current directory.
 * `initialPostGcSleep`: Timeout in milliseconds after the initial garbage collection.
 * `finalPostTestSleep`: Timeout in milliseconds after the final test execution.
 * `finalPostGcSleep`: Timeout in milliseconds after the final garbage collection.
@@ -95,12 +97,14 @@ The optional `options` object has the following default values:
 
 ```javascript
 {
+    dir: '',
     writeLogFile: true,
     writeCsvFile: true,
     generateGraph: true
 }
 ```
 
+* `dir`: Directory to output reports. Defaults to current directory.
 * `writeLogFile`: Enable/disable writing memory results to a log file.
 * `writeCsvFile`: Enable/disable writing memory results to a CSV file.
 * `generateGraph`: Enable/disable generating memory results graph to a PNG file.
