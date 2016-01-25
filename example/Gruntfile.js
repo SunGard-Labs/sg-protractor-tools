@@ -361,7 +361,8 @@ module.exports = function (grunt) {
         protractor: {
             options: {
                 keepAlive: false,
-                configFile: 'protractor.conf.js'
+                configFile: 'protractor.conf.js',
+                webdriverManagerUpdate: true
             },
             run: {}
         }
