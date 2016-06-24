@@ -28,7 +28,7 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    'sg_release': {
+    'fis_release': {
       options: {
         skipBowerInstall: true,
         developBranch: 'develop',
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('release', ['sg_release']);
+  grunt.registerTask('release', ['fis_release']);
 
   grunt.registerTask('test', 'mochaTest');
 

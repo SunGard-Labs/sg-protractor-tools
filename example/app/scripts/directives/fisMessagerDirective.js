@@ -3,17 +3,17 @@
  * @name sgMessager
  * @description Directive that displays specified messages in protractor tests.
  */
-angular.module('exampleApp').directive('sgMessager', function () {
+angular.module('exampleApp').directive('fisMessager', function () {
     'use strict';
 
     return {
 		restrict: 'E',
 		replace: true,
 		template :  '<div class="{{ messageClasses }}">' +
-						'<input id="sgMessagerMessageInput" type="text" ng-model="currentMessageKey" class="sg-messager-input" style="margin-top:10px;">' +
-						'<input id="sgMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="sg-messager-input" style="margin-top:12px;">' +
-						'<input id="sgMessagerPosition" type="text" ng-model="messagerPosition" class="sg-messager-input" style="margin-top:14px;">' +
-						'<input type="button" value="-" ng-click="toggleMessageArea()" class="sg-messager-area-icons">' +
+						'<input id="fisMessagerMessageInput" type="text" ng-model="currentMessageKey" class="fis-messager-input" style="margin-top:10px;">' +
+						'<input id="fisMessagerErrorMessageInput" type="text" ng-model="errorMessage" class="fis-messager-input" style="margin-top:12px;">' +
+						'<input id="fisMessagerPosition" type="text" ng-model="messagerPosition" class="fis-messager-input" style="margin-top:14px;">' +
+						'<input type="button" value="-" ng-click="toggleMessageArea()" class="fis-messager-area-icons">' +
 						'{{ currentMessage }}<br>' +
 					'</div>',
         link: function (scope) {
@@ -66,7 +66,7 @@ angular.module('exampleApp').directive('sgMessager', function () {
 				}
 			});
 			scope.updateMessageClasses = function() {
-				scope.messageClasses = 'sg-messager-explanation-message '+scope.positionState+' '+scope.styleState+' '+scope.reducedState;
+				scope.messageClasses = 'fis-messager-explanation-message '+scope.positionState+' '+scope.styleState+' '+scope.reducedState;
 			};
         }
     };

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name exampleApp.directive:sgMoveable
+ * @name exampleApp.directive:fisMoveable
  * @description
- * # sgMoveable
+ * # fisMoveable
  */
 angular.module('exampleApp')
-    .directive('sgMoveable', function ($document) {
+    .directive('fisMoveable', function ($document) {
         return {
             restrict: 'A',
             link: function postLink(scope, element) {

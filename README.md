@@ -1,4 +1,4 @@
-# sg-protractor-tools
+# fis-protractor-tools
 
 [![Build Status](https://travis-ci.org/SunGard-Labs/sg-protractor-tools.svg)](https://travis-ci.org/SunGard-Labs/sg-protractor-tools)
 
@@ -50,7 +50,7 @@ In addition to the memory tracking, the library also includes functions that sim
 To include this library in your own project, use the following command:
 
 ```
-npm install --save-dev sg-protractor-tools
+npm install --save-dev fis-protractor-tools
 ```
 
 This will include the library in your project's `package.json` file as a _development dependency_.
@@ -60,7 +60,7 @@ This will include the library in your project's `package.json` file as a _develo
 To use the library in your code, use the following code to import it:
 
 ```
-var sgpt = require('sg-protractor-tools');
+var sgpt = require('fis-protractor-tools');
 ```
 
 This will expose the libraries main object as `sgpt` in your code. You can use the library's functions by referencing the `sgpt` object, e.g. for scrolling:
@@ -94,7 +94,7 @@ Pull requests are welcome - please stick to the coding style used in the rest of
 
  * Clone the project to a local folder
  * Use `npm link` to install it locally
- * Use `npm link sg-protractor-tools` in your application's directory to install the local development version
+ * Use `npm link fis-protractor-tools` in your application's directory to install the local development version
 
 ### Release
 
