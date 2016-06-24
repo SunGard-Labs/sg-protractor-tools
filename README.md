@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/SunGard-Labs/sg-protractor-tools.svg)](https://travis-ci.org/SunGard-Labs/sg-protractor-tools)
 
+Note: SunGard has now merged with FISGlobal.
+
 Version: 1.0.5-SNAPSHOT
 
-This library provides a reusable and generic set of helper functions for the Protractor test framework, which SunGard is using for testing its HTML5-based user interfaces. It includes functions that simplify things like browser resizing, scrolling and memory usage tracking as part of a test suite. The project bundles an example application that showcases the functionality.
+This library provides a reusable and generic set of helper functions for the Protractor test framework, which FISGlobal is using for testing its HTML5-based user interfaces. It includes functions that simplify things like browser resizing, scrolling and memory usage tracking as part of a test suite. The project bundles an example application that showcases the functionality.
 
 While using [Protractor](https://github.com/angular/protractor) for testing our [Angular](https://angularjs.org/)-based applications, we have found that we can simplify many of the common tasks done as part of part of our test suite. The Protractor API is fairly low-level in some cases, and we have seen that we can cut down the amount of code for some common tasks by externalizing functionality into a reusable library.
 
@@ -114,4 +116,4 @@ grunt release --releaseVersion 0.2.0 --developVersion 0.3.0-SNAPSHOT
 
 ## License
 
-Copyright © SunGard 2015. Licensed under the MIT license.
+Copyright © FISGlobal 2015. Licensed under the MIT license.
