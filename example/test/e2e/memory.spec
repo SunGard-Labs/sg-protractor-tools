@@ -1,8 +1,8 @@
 // In your test suite, use this code to include the test library.
-// var sgpt = require('sg-protractor-tools');
+// var fispt = require('sg-protractor-tools');
 
 // Using the local version of the code from this project.
-var sgpt = require('../../../');
+var fispt = require('../../../');
 
 /**
  * Note: Do not run both test cases simultaneously, as even after page reload memory consumption might be influenced
@@ -12,7 +12,7 @@ var sgpt = require('../../../');
  */
 describe('Demonstrate the use of memory measuring tool', function () {
     // Get the messager object to display current test execution status inside the browser
-    var msg = sgpt.messager.msg;
+    var msg = fispt.messager.msg;
 
     // Set to a high value to avoid timeout by Protractor for this it test.
     var itTimeout = 1000000;
@@ -34,7 +34,7 @@ describe('Demonstrate the use of memory measuring tool', function () {
         var that = this;
 
         browser.get('#/memoryTest', 30000).then(function () {
-            sgpt.memory.runTestFunction(that, iterations, function (i) {
+            fispt.memory.runTestFunction(that, iterations, function (i) {
                     if (i % 10 === 0) {
                         // Every ten iterations update the label
                         msg(browser, 'Button click iteration ' + i, undefined, 0);
@@ -59,7 +59,7 @@ describe('Demonstrate the use of memory measuring tool', function () {
         var that = this;
 
         browser.get('#/memoryTest', 30000).then(function () {
-            sgpt.memory.runTestFunction(that, iterations, function (i) {
+            fispt.memory.runTestFunction(that, iterations, function (i) {
                     if (i % 10 === 0) {
                         // Every ten iterations update the label
                         msg(browser, 'Button click iteration ' + i, undefined, 0);

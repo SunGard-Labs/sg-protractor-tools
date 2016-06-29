@@ -1,12 +1,12 @@
 // In your test suite, use this code to include the test library.
-// var sgpt = require('sg-protractor-tools');
+// var fispt = require('sg-protractor-tools');
 
 // Using the local version of the code from this project.
-var sgpt = require('../../../');
+var fispt = require('../../../');
 
 describe('Testing the getting of consoleLogs function', function () {
     // Get the messager object to display current test execution status inside the browser
-    var msg = sgpt.messager.msg;
+    var msg = fispt.messager.msg;
 
     /* WHAT ARE WE TESTING:
      *
@@ -22,8 +22,8 @@ describe('Testing the getting of consoleLogs function', function () {
 
     beforeEach(function () {
         browser.get('#/consoleLogs');
-        sgpt.messager.repositionMessager(sgpt.messager.TOP_RIGHT);
-        sgpt.resize.reset();
+        fispt.messager.repositionMessager(fispt.messager.TOP_RIGHT);
+        fispt.resize.reset();
     });
 
     /**
@@ -31,7 +31,7 @@ describe('Testing the getting of consoleLogs function', function () {
      * But info and warning logs are acceptable and won't cause failure
      */
     describe('tests that do not produce error console output', function () {
-        sgpt.consoleLogs.expectNoErrors(this);
+        fispt.consoleLogs.expectNoErrors(this);
 
         it('should not fail due to a logged info console message', function () {
             // This test passes, as it only produces an info in the console
@@ -55,7 +55,7 @@ describe('Testing the getting of consoleLogs function', function () {
 
     describe('tests that do not produce warning or error console output', function () {
         // But info outputs are acceptable and won't cause failure
-        sgpt.consoleLogs.expectNoWarnings(this);
+        fispt.consoleLogs.expectNoWarnings(this);
 
         it('should not fail due to a logged info console message', function () {
             // This test passes, as it only produces an info in the console
@@ -83,7 +83,7 @@ describe('Testing the getting of consoleLogs function', function () {
         element(by.css('button[id="errorButton"]')).click();
 
         // Retrieve all log information
-        sgpt.consoleLogs.consoleLogs().then(function (logs) {
+        fispt.consoleLogs.consoleLogs().then(function (logs) {
             var containsError = false;
 
             // iterate over the array ...

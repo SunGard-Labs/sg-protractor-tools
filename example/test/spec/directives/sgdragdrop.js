@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: sgDragDrop', function () {
+describe('Directive: fisDragDrop', function () {
 
   // load the directive's module
   beforeEach(module('exampleApp'));
@@ -13,8 +13,8 @@ describe('Directive: sgDragDrop', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<sg-drag-drop></sg-drag-drop>');
+    element = angular.element('<fis-drag-drop></fis-drag-drop>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the sgDragDrop directive');
+    expect(element.text()).toBe('this is the fisDragDrop directive');
   }));
 });

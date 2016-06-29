@@ -1,6 +1,6 @@
 /*jshint multistr:true */
 /**
- * @name sgMessager
+ * @name fisMessager
  * @description Directive that displays specified messages in protractor tests.
  */
 angular.module('exampleApp').directive('fisMessager', function () {

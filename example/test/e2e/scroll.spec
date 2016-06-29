@@ -1,24 +1,24 @@
 // In your test suite, use this code to include the test library.
-// var sgpt = require('sg-protractor-tools');
+// var fispt = require('sg-protractor-tools');
 
 // Using the local version of the code from this project.
-var sgpt = require('../../../');
+var fispt = require('../../../');
 
 describe('Testing protractor scrolling function', function () {
 
     var webDriver = browser.driver;
 
     // Get the messager object to display current test execution status inside the browser
-    var msg = sgpt.messager.msg;
+    var msg = fispt.messager.msg;
 
     beforeEach(function () {
         // Go to the right page
         browser.get('#/scroll');
-        sgpt.messager.repositionMessager(sgpt.messager.TOP_RIGHT);
+        fispt.messager.repositionMessager(fispt.messager.TOP_RIGHT);
     });
 
     afterEach(function () {
-        sgpt.messager.logErrors(browser, msg);
+        fispt.messager.logErrors(browser, msg);
     });
 
     var moveAndClickMouse = function (element, posX, posY) {
@@ -46,7 +46,7 @@ describe('Testing protractor scrolling function', function () {
         expect(element(by.css('div.button-obstructor')).getText()).toBe('Hello World');
 
         // Scroll to make button visible
-        sgpt.scroll.scrollTo(goodbyeButton).then(function() {
+        fispt.scroll.scrollTo(goodbyeButton).then(function() {
             msg(browser, 'Step 2) Now attempting to click the button..');
 
             // Click on the now visible button

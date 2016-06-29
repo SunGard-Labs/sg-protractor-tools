@@ -34,7 +34,7 @@ Access to the console logs allows writing tests that verify that no errors are t
 
 ```javascript
 afterEach(function (done) {
-    var consoleLogPromise = sgpt.consoleLogs.consoleLogs(done);
+    var consoleLogPromise = fispt.consoleLogs.consoleLogs(done);
     consoleLogPromise.then(function (browserLogs) {
         browserLogs.forEach(function (log) {
             expect(log.level.value > 900).toBeFalsy();

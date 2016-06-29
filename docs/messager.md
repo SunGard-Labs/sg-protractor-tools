@@ -23,24 +23,24 @@ error - boolean telling whether this message is an error message or normal messa
 msgDelay - time in milliseconds that each message is displayed for, default is 2000ms
 pauseOnError - if you have the logErrors function inside your afterEach, setting this to true will tell the debugger to pause when an exception is thrown
 position - position to display the messager at (see constants below)
-msgFunction - this refers to the sgpt.messager.msg function, which needs to be passed into the logErrors function
+msgFunction - this refers to the fispt.messager.msg function, which needs to be passed into the logErrors function
 stillOutputToLog - setting this to true tells the app to log the console exceptions into the command console as well
-sgpt - SunGard Protractor Tools (the name of our tools package)
+fispt - SunGard Protractor Tools (the name of our tools package)
 ```
 
 ## Usage Examples
 ```
-sgpt.messager.msg(browser,'Howdy');
-sgpt.messager.msg(browser,'Howdy',false,3000,true);
+fispt.messager.msg(browser,'Howdy');
+fispt.messager.msg(browser,'Howdy',false,3000,true);
 
 beforeEach(function () {
-	sgpt.messager.repositionMessager(sgpt.messager.TOP_RIGHT);
+	fispt.messager.repositionMessager(fispt.messager.TOP_RIGHT);
 	// OR
-	sgpt.messager.repositionMessager(sgpt.messager.BOTTOM_LEFT);
+	fispt.messager.repositionMessager(fispt.messager.BOTTOM_LEFT);
 });	
 
 // You need to add the following to the afterEach to benefit from the special error logging functionality
 afterEach(function() {
-	sgpt.messager.logErrors(browser,sgpt.messager.msg);
+	fispt.messager.logErrors(browser,fispt.messager.msg);
 });
 ```

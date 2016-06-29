@@ -28,7 +28,7 @@ Take a look at the [memory.md](docs/memory.md) file to see the API for running a
 it('should increase the memory consumption', function () {
     var iterations = 250;
 
-    sgpt.memory.runTestFunction(this, iterations, function () {
+    fispt.memory.runTestFunction(this, iterations, function () {
         // This test function will be called 250 times, and the memory is measured after each iteration.
 
         // Your test code goes here.
@@ -62,16 +62,16 @@ This will include the library in your project's `package.json` file as a _develo
 To use the library in your code, use the following code to import it:
 
 ```
-var sgpt = require('fis-protractor-tools');
+var fispt = require('fis-protractor-tools');
 ```
 
-This will expose the libraries main object as `sgpt` in your code. You can use the library's functions by referencing the `sgpt` object, e.g. for scrolling:
+This will expose the libraries main object as `fispt` in your code. You can use the library's functions by referencing the `fispt` object, e.g. for scrolling:
 
 ```
-sgpt.scroll.scrollTo(...);
+fispt.scroll.scrollTo(...);
 ```
 
-The library's functions are split up by their domain, e.g. all functions relating to resizing windows are grouped under the `sgpt.resize` object. Take a look at the [docs](docs) folder for more information.
+The library's functions are split up by their domain, e.g. all functions relating to resizing windows are grouped under the `fispt.resize` object. Take a look at the [docs](docs) folder for more information.
 
 ## Examples
 

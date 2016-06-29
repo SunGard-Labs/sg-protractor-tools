@@ -23,7 +23,7 @@
     "maxcomplexity": 5,
     "jquery": true,
     "predef": [
-        "sg", "sungard", "angular",
+        "fis", "fisglobal", "angular",
         "_", "window", "SunGard",
         "yepnope", "jsonString", "setTimeout",
         "clearTimeout", "inputs", "kendo",

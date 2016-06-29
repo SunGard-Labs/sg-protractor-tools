@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: sgMoveable', function () {
+describe('Directive: fisMoveable', function () {
 
   // load the directive's module
   beforeEach(module('exampleApp'));
@@ -13,8 +13,8 @@ describe('Directive: sgMoveable', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<sg-moveable></sg-moveable>');
+    element = angular.element('<fis-moveable></fis-moveable>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the sgMoveable directive');
+    expect(element.text()).toBe('this is the fisMoveable directive');
   }));
 });
