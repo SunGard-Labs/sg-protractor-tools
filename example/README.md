@@ -1,4 +1,4 @@
-# SunGard Protractor Tools Demo Application
+# Fidelity Information Services Protractor Tools Demo Application
 
 This basic Angular application showcases the usage of `sg-protractor-tools` for writing end-to-end tests with Protractor.
 The test cases may be found in the [test/e2e](test/e2e) folder.

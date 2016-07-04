@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/SunGard-Labs/sg-protractor-tools.svg)](https://travis-ci.org/SunGard-Labs/sg-protractor-tools)
 
-Note: SunGard has now merged with FIS.
+Note: SunGard has now merged with Fidelity Information Services, LLC (FIS)
 
 Version: 1.0.5-SNAPSHOT
 
