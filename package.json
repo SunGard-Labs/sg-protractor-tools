@@ -1,5 +1,5 @@
 {
-  "name": "fis-protractor-tools",
+  "name": "sg-protractor-tools",
   "version": "1.0.5-SNAPSHOT",
   "description": "Library of reusable helper functions for testing HTML5 applications with Protractor",
   "main": "index.js",
@@ -60,7 +60,7 @@
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.12.0",
-    "grunt-fis-release": "^0.2.2",
+    "grunt-sg-release": "^0.2.2",
     "jshint-stylish": "^1.0.0",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.21.4"

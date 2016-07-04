@@ -1,12 +1,12 @@
-# fis-protractor-tools
+# sg-protractor-tools
 
 [![Build Status](https://travis-ci.org/SunGard-Labs/sg-protractor-tools.svg)](https://travis-ci.org/SunGard-Labs/sg-protractor-tools)
 
-Note: SunGard has now merged with FISGlobal.
+Note: SunGard has now merged with FIS.
 
 Version: 1.0.5-SNAPSHOT
 
-This library provides a reusable and generic set of helper functions for the Protractor test framework, which FISGlobal is using for testing its HTML5-based user interfaces. It includes functions that simplify things like browser resizing, scrolling and memory usage tracking as part of a test suite. The project bundles an example application that showcases the functionality.
+This library provides a reusable and generic set of helper functions for the Protractor test framework, which FIS is using for testing its HTML5-based user interfaces. It includes functions that simplify things like browser resizing, scrolling and memory usage tracking as part of a test suite. The project bundles an example application that showcases the functionality.
 
 While using [Protractor](https://github.com/angular/protractor) for testing our [Angular](https://angularjs.org/)-based applications, we have found that we can simplify many of the common tasks done as part of part of our test suite. The Protractor API is fairly low-level in some cases, and we have seen that we can cut down the amount of code for some common tasks by externalizing functionality into a reusable library.
 
@@ -52,7 +52,7 @@ In addition to the memory tracking, the library also includes functions that sim
 To include this library in your own project, use the following command:
 
 ```
-npm install --save-dev fis-protractor-tools
+npm install --save-dev sg-protractor-tools
 ```
 
 This will include the library in your project's `package.json` file as a _development dependency_.
@@ -62,7 +62,7 @@ This will include the library in your project's `package.json` file as a _develo
 To use the library in your code, use the following code to import it:
 
 ```
-var fispt = require('fis-protractor-tools');
+var fispt = require('sg-protractor-tools');
 ```
 
 This will expose the libraries main object as `fispt` in your code. You can use the library's functions by referencing the `fispt` object, e.g. for scrolling:
@@ -96,7 +96,7 @@ Pull requests are welcome - please stick to the coding style used in the rest of
 
  * Clone the project to a local folder
  * Use `npm link` to install it locally
- * Use `npm link fis-protractor-tools` in your application's directory to install the local development version
+ * Use `npm link sg-protractor-tools` in your application's directory to install the local development version
 
 ### Release
 
@@ -116,4 +116,4 @@ grunt release --releaseVersion 0.2.0 --developVersion 0.3.0-SNAPSHOT
 
 ## License
 
-Copyright © FISGlobal 2015. Licensed under the MIT license.
+Copyright © FIS 2015. Licensed under the MIT license.
