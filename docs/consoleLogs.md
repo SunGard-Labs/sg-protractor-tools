@@ -14,7 +14,7 @@ Note: It is recommended to reload the page before every test case (in beforeEach
 describe('my suite', function(){
     html5.consoleLogs.expectNoErrors(this);
 
-    it('should test something, function(){
+    it('should test something', function(){
     
     });
 });
